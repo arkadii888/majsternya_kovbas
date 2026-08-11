@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import {
   Sheet,
   SheetContent,
@@ -54,11 +54,9 @@ export function MainNav() {
         <span className="text-lg font-bold">Майстерня Ковбас</span>
 
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon">
-              <Menu className="h-6 w-6" />
-              <span className="sr-only">Відкрити меню</span>
-            </Button>
+          <SheetTrigger className={buttonVariants({ variant: "ghost", size: "icon" })}>
+            <Menu className="h-6 w-6" />
+            <span className="sr-only">Відкрити меню</span>
           </SheetTrigger>
 
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
