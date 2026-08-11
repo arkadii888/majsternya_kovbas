@@ -1,7 +1,12 @@
 export default function NewsPage() {
   return (
-    <main className="container mx-auto p-4 mt-8">
-      <h1 className="text-3xl font-bold">Акції та новини</h1>
-    </main>
+    <div className="container mx-auto px-4 py-8 md:py-12">
+      <div className="mb-8 flex flex-col gap-2">
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Акції та новини</h1>
+        <p className="text-muted-foreground text-lg">Слідкуйте за останніми подіями та знижками.</p>
+      </div>
+      <div className="grid gap-6">
+      </div>
+    </div>
   );
 }
