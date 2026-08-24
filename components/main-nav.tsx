@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import Image from "next/image"
+import logoPic from "../public/logo.png"
 import { Menu } from "lucide-react"
 import {
   NavigationMenu,
@@ -40,7 +41,7 @@ export function MainNav() {
         className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center shrink-0"
       >
         <Image
-          src="/logo.png"
+          src={logoPic}
           alt="Майстерня Ковбас"
           width={280}
           height={96}
