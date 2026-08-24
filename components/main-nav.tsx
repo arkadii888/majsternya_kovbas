@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import Image from "next/image"
 import { Menu } from "lucide-react"
 import {
   NavigationMenu,
@@ -32,11 +33,25 @@ export function MainNav() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="flex w-full items-center justify-between md:justify-center">
+    <div className="flex w-full items-center justify-end md:justify-between relative">
+
+      <Link
+        href="/"
+        className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center shrink-0"
+      >
+        <Image
+          src="/logo.png"
+          alt="Майстерня Ковбас"
+          width={280}
+          height={96}
+          priority
+          className="h-12 md:h-16 w-auto object-contain transition-all"
+        />
+      </Link>
 
       <div className="hidden md:flex">
         <NavigationMenu>
-          <NavigationMenuList className="flex flex-wrap gap-2 justify-center">
+          <NavigationMenuList className="flex flex-wrap gap-1 justify-end">
             {routes.map((route) => (
               <NavigationMenuItem key={route.href}>
                 <Link href={route.href} legacyBehavior passHref>
@@ -50,9 +65,8 @@ export function MainNav() {
         </NavigationMenu>
       </div>
 
-      <div className="flex w-full items-center justify-between md:hidden">
-        <span className="text-lg font-bold">Майстерня Ковбас</span>
-
+      {/* МОБИЛЬНОЕ МЕНЮ */}
+      <div className="flex md:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger className={buttonVariants({ variant: "ghost", size: "icon" })}>
             <Menu className="h-6 w-6" />
