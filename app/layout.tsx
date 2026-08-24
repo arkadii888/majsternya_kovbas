@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="uk" className={cn("font-sans", geist.variable)}>
+    <html lang="uk" className={cn("font-sans", geist.variable, "dark")}>
       <body className={`${inter.className} min-h-screen bg-background antialiased`}>
         <div className="relative flex min-h-screen flex-col">
 
