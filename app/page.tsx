@@ -18,7 +18,9 @@ const bottomLinks = [
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-20">
-      <div className="mb-16 flex flex-col items-center justify-start gap-8 md:flex-row md:gap-16 lg:gap-24">
+
+      <div className="relative mb-16 flex flex-col items-center justify-start gap-8 py-8 md:flex-row md:gap-16 lg:gap-24">
+
         <div className="flex flex-col items-start text-left shrink-0">
           <h1 className="text-5xl font-black uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
             <span className="block text-foreground">Від майстрів</span>
@@ -39,6 +41,7 @@ export default function Home() {
       </div>
 
       <div className="mb-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
+
         {[1, 2, 3, 4].map((item) => (
           <Card key={item} className="relative overflow-hidden flex h-full min-h-[240px] flex-col border-dashed opacity-50 justify-center items-center bg-transparent">
             <span className="text-muted-foreground text-sm">Місце для товару</span>
@@ -46,12 +49,11 @@ export default function Home() {
         ))}
 
         <Link href="/catalog" className="group block h-full outline-none">
-          <Card className="relative overflow-hidden flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary">
-            <div className="absolute inset-0 z-0 flex items-center justify-center bg-muted/10 text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
-              Фон каталогу
-            </div>
+          <Card className="relative overflow-hidden flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary bg-muted/10">
 
-            <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
+            <div className="absolute inset-0 z-0 flex items-center justify-center text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
+              Місце для фото
+            </div>
 
             <CardHeader className="relative z-20 mt-auto flex flex-col gap-1 p-5">
               <CardTitle className="text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
@@ -68,12 +70,11 @@ export default function Home() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
         {bottomLinks.map((link) => (
           <Link key={link.href} href={link.href} className="group block h-full outline-none">
-            <Card className="relative overflow-hidden flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary">
-              <div className="absolute inset-0 z-0 flex items-center justify-center bg-muted/10 text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
+            <Card className="relative overflow-hidden flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary bg-muted/10">
+
+              <div className="absolute inset-0 z-0 flex items-center justify-center text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
                 Місце для фото
               </div>
-
-              <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
 
               <CardHeader className="relative z-20 mt-auto flex flex-col gap-1 p-5">
                 <CardTitle className="text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
