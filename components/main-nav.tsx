@@ -66,7 +66,6 @@ export function MainNav() {
         </NavigationMenu>
       </div>
 
-      {/* МОБИЛЬНОЕ МЕНЮ */}
       <div className="flex md:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger className={buttonVariants({ variant: "ghost", size: "icon" })}>
