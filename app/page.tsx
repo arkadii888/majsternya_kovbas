@@ -32,12 +32,12 @@ export default function Home() {
             className="h-auto w-full object-contain drop-shadow-2xl [mask-image:radial-gradient(ellipse_at_top,black_40%,transparent_90%)]"
           />
           
-          <div className="absolute inset-0 flex flex-col items-start justify-start p-8 md:p-16 lg:p-24 pointer-events-none">
-            <h1 className="text-4xl font-black uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl max-w-[50%] drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
-              <span className="block text-foreground">Від майстрів</span>
-              <span className="block text-primary">м'ясної справи!</span>
-            </h1>
-          </div>
+           <div className="absolute inset-0 flex flex-col items-start justify-start p-8 md:p-16 lg:p-24 pointer-events-none">
+             <h1 className="text-3xl font-black uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl max-w-[70%] md:max-w-[50%] drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] md:mt-0 -mt-2">
+               <span className="block text-foreground">Від майстрів</span>
+               <span className="block text-primary">м'ясної справи!</span >
+             </h1>
+           </div>
         </div>
       </div>
 
@@ -57,10 +57,10 @@ export default function Home() {
             </div>
 
             <CardHeader className="relative z-20 mt-auto flex flex-col gap-1 p-5">
-              <CardTitle className="text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
+              <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
                 Каталог продукції
               </CardTitle>
-              <CardDescription className="text-base text-gray-400">
+              <CardDescription className="text-sm sm:text-base text-gray-400">
                 Переглянути весь асортимент
               </CardDescription>
             </CardHeader>
@@ -78,10 +78,10 @@ export default function Home() {
               </div>
 
               <CardHeader className="relative z-20 mt-auto flex flex-col gap-1 p-5">
-                <CardTitle className="text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
+                <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
                   {link.title}
                 </CardTitle>
-                <CardDescription className="text-base text-gray-400">
+                <CardDescription className="text-sm sm:text-base text-gray-400">
                   {link.desc}
                 </CardDescription>
               </CardHeader>
