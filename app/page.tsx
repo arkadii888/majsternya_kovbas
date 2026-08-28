@@ -27,7 +27,7 @@ export default function Home() {
             width={1400}
             height={700}
             priority
-            className="h-auto w-full object-contain drop-shadow-xl"
+            className="h-auto w-full object-contain drop-shadow-xl [mask-image:radial-gradient(ellipse_at_top,black_50%,transparent_100%)]"
           />
           <div className="absolute inset-0 flex flex-col items-start justify-start p-8 md:p-16 lg:p-24">
             <h1 className="text-4xl font-black uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl max-w-[50%]">
