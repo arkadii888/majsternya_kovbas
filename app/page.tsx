@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import majsterImg from "../public/majster.png";
 import {
   Card,
   CardDescription,
@@ -23,9 +24,10 @@ export default function Home() {
         <div className="relative w-full flex items-center justify-center">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,165,0,0.15)_0%,transparent_70%)] pointer-events-none" />
 
-          <Image
-            src="/majster.png"
-            alt="Майстер"
+           <Image
+             src={majsterImg}
+             alt="Майстер"
+
             width={1400}
             height={700}
             priority
