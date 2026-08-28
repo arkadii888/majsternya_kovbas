@@ -19,18 +19,21 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-20">
 
-      <div className="relative mb-16 flex flex-col items-center justify-center">
+      <div className="relative mb-16 flex flex-col items-center justify-center overflow-hidden">
         <div className="relative w-full flex items-center justify-center">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,165,0,0.15)_0%,transparent_70%)] pointer-events-none" />
+          
           <Image
             src="/majster.png"
             alt="Майстер"
             width={1400}
             height={700}
             priority
-            className="h-auto w-full object-contain drop-shadow-xl [mask-image:radial-gradient(ellipse_at_top,black_50%,transparent_100%)]"
+            className="h-auto w-full object-contain drop-shadow-2xl [mask-image:radial-gradient(ellipse_at_top,black_40%,transparent_90%)]"
           />
-          <div className="absolute inset-0 flex flex-col items-start justify-start p-8 md:p-16 lg:p-24">
-            <h1 className="text-4xl font-black uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl max-w-[50%]">
+          
+          <div className="absolute inset-0 flex flex-col items-start justify-start p-8 md:p-16 lg:p-24 pointer-events-none">
+            <h1 className="text-4xl font-black uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl max-w-[50%] drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
               <span className="block text-foreground">Від майстрів</span>
               <span className="block text-primary">м'ясної справи!</span>
             </h1>
