@@ -55,7 +55,7 @@ export default function Home() {
             <div className="absolute inset-0 z-0 flex items-center justify-center text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
             </div>
 
-            <CardHeader className="relative z-20 mt-auto flex flex-col gap-1 p-5">
+            <CardHeader className="relative z-20 flex flex-col gap-1 p-5">
               <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
                 Каталог продукції
               </CardTitle>
@@ -75,7 +75,7 @@ export default function Home() {
               <div className="absolute inset-0 z-0 flex items-center justify-center text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
               </div>
 
-              <CardHeader className="relative z-20 mt-auto flex flex-col gap-1 p-5">
+<CardHeader className="relative z-20 flex flex-col gap-1 p-5">
                 <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
                   {link.title}
                 </CardTitle>
