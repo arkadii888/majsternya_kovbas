@@ -22,7 +22,7 @@ export default function Home() {
       <div className="relative mb-16 flex flex-col items-center justify-center overflow-hidden">
         <div className="relative w-full flex items-center justify-center">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,165,0,0.15)_0%,transparent_70%)] pointer-events-none" />
-          
+
           <Image
             src="/majster.png"
             alt="Майстер"
@@ -31,7 +31,7 @@ export default function Home() {
             priority
             className="h-auto w-full object-contain drop-shadow-2xl [mask-image:radial-gradient(ellipse_at_top,black_40%,transparent_90%)]"
           />
-          
+
            <div className="absolute inset-0 flex flex-col items-start justify-start p-8 md:p-16 lg:p-24 pointer-events-none">
              <h1 className="text-3xl font-black uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl max-w-[70%] md:max-w-[50%] drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] md:mt-0 -mt-2">
                <span className="block text-foreground">Від майстрів</span>
@@ -41,11 +41,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mb-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
+      <div className="mb-8 grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
 
         {[1, 2, 3, 4].map((item) => (
           <Card key={item} className="relative overflow-hidden flex h-full min-h-[240px] flex-col border-dashed opacity-50 justify-center items-center bg-transparent">
-            <span className="text-muted-foreground text-sm">Місце для товару</span>
+            <span className="text-muted-foreground text-sm"></span>
           </Card>
         ))}
 
@@ -53,7 +53,6 @@ export default function Home() {
           <Card className="relative overflow-hidden flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary bg-muted/10">
 
             <div className="absolute inset-0 z-0 flex items-center justify-center text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
-              Місце для фото
             </div>
 
             <CardHeader className="relative z-20 mt-auto flex flex-col gap-1 p-5">
@@ -68,13 +67,12 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
+      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
         {bottomLinks.map((link) => (
           <Link key={link.href} href={link.href} className="group block h-full outline-none">
             <Card className="relative overflow-hidden flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary bg-muted/10">
 
               <div className="absolute inset-0 z-0 flex items-center justify-center text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
-                Місце для фото
               </div>
 
               <CardHeader className="relative z-20 mt-auto flex flex-col gap-1 p-5">
