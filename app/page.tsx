@@ -19,24 +19,22 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-20">
 
-      <div className="relative mb-16 flex flex-col items-center justify-start gap-8 py-8 md:flex-row md:gap-16 lg:gap-24">
-
-        <div className="flex flex-col items-start text-left shrink-0">
-          <h1 className="text-5xl font-black uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
-            <span className="block text-foreground">Від майстрів</span>
-            <span className="block text-primary">м'ясної справи!</span>
-          </h1>
-        </div>
-
-        <div className="flex w-full justify-center md:w-auto md:justify-start">
+      <div className="relative mb-16 flex flex-col items-center justify-center">
+        <div className="relative w-full flex items-center justify-center">
           <Image
             src="/majster.png"
             alt="Майстер"
-            width={500}
-            height={500}
+            width={1400}
+            height={700}
             priority
-            className="h-auto w-full max-w-[350px] lg:max-w-[450px] object-contain drop-shadow-xl"
+            className="h-auto w-full object-contain drop-shadow-xl"
           />
+          <div className="absolute inset-0 flex flex-col items-start justify-start p-8 md:p-16 lg:p-24">
+            <h1 className="text-4xl font-black uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl max-w-[50%]">
+              <span className="block text-foreground">Від майстрів</span>
+              <span className="block text-primary">м'ясної справи!</span>
+            </h1>
+          </div>
         </div>
       </div>
 
