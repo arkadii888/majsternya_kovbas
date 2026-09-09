@@ -30,7 +30,6 @@ type MenuItem = { href: string; label: string }
 type MenuGroup = {
   id: string
   trigger: string
-  header: MenuItem
   items: MenuItem[]
 }
 
@@ -38,19 +37,16 @@ const groups: MenuGroup[] = [
   {
     id: "catalog",
     trigger: "Каталог продукції",
-    header: { href: "/catalog", label: "Усі категорії" },
     items: catalogCategories,
   },
   {
     id: "network",
     trigger: "Наша мережа",
-    header: { href: "/network", label: "Знайти магазин" },
     items: networkPages,
   },
   {
     id: "master-card",
     trigger: "Карта Майстра",
-    header: { href: "/master-card", label: "Програма лояльності" },
     items: masterCardPages,
   },
 ]
@@ -64,15 +60,6 @@ const routes = [
 function NavList({ group }: { group: MenuGroup }) {
   return (
     <ul className="flex flex-col gap-1">
-      <li>
-        <NavigationMenuLink
-          href={group.header.href}
-          closeOnClick
-          className="cursor-pointer rounded-lg px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-        >
-          {group.header.label}
-        </NavigationMenuLink>
-      </li>
       {group.items.map((item) => (
         <li key={item.href}>
           <NavigationMenuLink
@@ -185,15 +172,6 @@ export function MainNav() {
                   </button>
                   {openGroup === group.id && (
                     <ul className="ml-3 mt-1 flex flex-col gap-1 border-l pl-3">
-                      <li>
-                        <Link
-                          href={group.header.href}
-                          onClick={closeMobileMenu}
-                          className="block rounded-md px-4 py-2 text-base font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                        >
-                          {group.header.label}
-                        </Link>
-                      </li>
                       {group.items.map((item) => (
                         <li key={item.href}>
                           <Link
