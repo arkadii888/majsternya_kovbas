@@ -9,8 +9,8 @@ import {
 } from "@/components/ui/card";
 
 const bottomLinks = [
-  { href: "/network", title: "Наша мережа", desc: "Знайдіть найближчий магазин" },
-  { href: "/master-card", title: "Карта Майстра", desc: "Програма лояльності" },
+  { href: "/stores", title: "Наша мережа", desc: "Знайдіть найближчий магазин" },
+  { href: "/loyalty", title: "Карта Майстра", desc: "Програма лояльності" },
   { href: "/production", title: "Про виробництво", desc: "Як ми створюємо продукт" },
   { href: "/news", title: "Акції та новини", desc: "Останні події та знижки" },
   { href: "/contacts", title: "Контакти", desc: "Зв'яжіться з нами" },

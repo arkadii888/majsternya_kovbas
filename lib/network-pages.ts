@@ -6,17 +6,17 @@ export type NetworkPage = {
 
 export const networkPages: NetworkPage[] = [
   {
-    href: "/network/karta",
+    href: "/stores/map",
     label: "Карта",
     description: "Інтерактивна карта з розташуванням усіх магазинів мережі.",
   },
   {
-    href: "/network/spysok-mahazyniv",
+    href: "/stores/list",
     label: "Список магазинів",
     description: "Актуальний перелік магазинів «Майстерня Ковбас» з адресами та графіком.",
   },
   {
-    href: "/network/misty",
+    href: "/stores/cities",
     label: "Міста",
     description: "Міста, де представлена наша мережа.",
   },
