@@ -33,7 +33,7 @@ export default function RootLayout({
             {children}
           </main>
 
-          <footer className="border-t py-6 md:py-0">
+          <footer className="py-6 md:py-0">
             <div className="container mx-auto flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
               <p className="text-sm leading-loose text-muted-foreground">
                 © 2026
