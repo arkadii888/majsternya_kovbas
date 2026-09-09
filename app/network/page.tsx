@@ -1,11 +1,29 @@
+import Link from "next/link";
+import { networkPages } from "@/lib/network-pages";
+
+export const metadata = {
+  title: "Наша мережа | Майстерня Ковбас",
+  description: "Знайдіть найближчий магазин «Майстерня Ковбас».",
+};
+
 export default function NetworkPage() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="mb-8 flex flex-col gap-2">
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Наша мережа</h1>
-        <p className="text-muted-foreground text-lg">Знайдіть найближчий магазин "Майстерня Ковбас".</p>
+        <p className="text-muted-foreground text-lg">Знайдіть найближчий магазин «Майстерня Ковбас».</p>
       </div>
-      <div className="grid gap-6">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {networkPages.map((page) => (
+          <Link
+            key={page.href}
+            href={page.href}
+            className="group rounded-xl border bg-card p-5 transition-colors hover:border-foreground/30 hover:bg-accent/50"
+          >
+            <h2 className="font-semibold group-hover:underline">{page.label}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">{page.description}</p>
+          </Link>
+        ))}
       </div>
     </div>
   );
