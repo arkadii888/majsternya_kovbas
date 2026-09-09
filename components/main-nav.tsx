@@ -25,26 +25,82 @@ import { catalogCategories } from "@/lib/catalog-categories"
 import { masterCardPages } from "@/lib/master-card-pages"
 import { networkPages } from "@/lib/network-pages"
 
+type MenuItem = { href: string; label: string }
+
+type MenuGroup = {
+  id: string
+  trigger: string
+  header: MenuItem
+  items: MenuItem[]
+}
+
+const groups: MenuGroup[] = [
+  {
+    id: "catalog",
+    trigger: "Каталог продукції",
+    header: { href: "/catalog", label: "Усі категорії" },
+    items: catalogCategories,
+  },
+  {
+    id: "network",
+    trigger: "Наша мережа",
+    header: { href: "/network", label: "Знайти магазин" },
+    items: networkPages,
+  },
+  {
+    id: "master-card",
+    trigger: "Карта Майстра",
+    header: { href: "/master-card", label: "Програма лояльності" },
+    items: masterCardPages,
+  },
+]
+
 const routes = [
   { href: "/production", label: "Про виробництво" },
   { href: "/news", label: "Акції та новини" },
   { href: "/contacts", label: "Контакти" },
 ]
 
+function NavList({ group }: { group: MenuGroup }) {
+  return (
+    <ul className="flex flex-col gap-1">
+      <li>
+        <NavigationMenuLink
+          href={group.header.href}
+          closeOnClick
+          className="cursor-pointer rounded-lg px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+        >
+          {group.header.label}
+        </NavigationMenuLink>
+      </li>
+      {group.items.map((item) => (
+        <li key={item.href}>
+          <NavigationMenuLink
+            href={item.href}
+            closeOnClick
+            className="cursor-pointer rounded-lg px-3 py-2 text-sm transition-colors hover:bg-muted hover:text-foreground"
+          >
+            {item.label}
+          </NavigationMenuLink>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 export function MainNav() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isCatalogOpen, setIsCatalogOpen] = useState(false)
-  const [isMasterCardOpen, setIsMasterCardOpen] = useState(false)
-  const [isNetworkOpen, setIsNetworkOpen] = useState(false)
+  const [openGroup, setOpenGroup] = useState<string | null>(null)
 
   const closeMobileMenu = () => setIsOpen(false)
+  const toggleGroup = (id: string) =>
+    setOpenGroup((current) => (current === id ? null : id))
 
   return (
-    <div className="flex w-full items-center justify-end md:justify-between relative">
-
+    <div className="relative flex w-full items-center justify-end md:justify-between">
       <Link
         href="/"
-        className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center shrink-0"
+        className="absolute left-1/2 flex shrink-0 -translate-x-1/2 items-center md:static md:translate-x-0"
       >
         <Image
           src={logoPic}
@@ -52,13 +108,13 @@ export function MainNav() {
           width={280}
           height={96}
           priority
-          className="h-12 md:h-16 w-auto object-contain transition-all"
+          className="h-12 w-auto object-contain transition-all md:h-16"
         />
       </Link>
 
-      <div className="hidden md:flex">
+      <div className="hidden md:block">
         <NavigationMenu>
-          <NavigationMenuList className="flex flex-wrap gap-1 justify-end">
+          <NavigationMenuList className="flex flex-wrap items-center justify-end gap-1">
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -66,91 +122,22 @@ export function MainNav() {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                Каталог продукції
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="w-64 p-2">
-                <ul className="flex flex-col">
-                  <li className="mb-1 border-b px-3 py-2">
-                    <Link
-                      href="/catalog"
-                      className="text-sm font-semibold text-muted-foreground"
-                    >
-                      Всі категорії
-                    </Link>
-                  </li>
-                  {catalogCategories.map((category) => (
-                    <li key={category.href}>
-                      <Link
-                        href={category.href}
-                        className="rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-                      >
-                        {category.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                Наша мережа
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="w-64 p-2">
-                <ul className="flex flex-col">
-                  <li className="mb-1 border-b px-3 py-2">
-                    <Link
-                      href="/network"
-                      className="text-sm font-semibold text-muted-foreground"
-                    >
-                      Знайти магазин
-                    </Link>
-                  </li>
-                  {networkPages.map((page) => (
-                    <li key={page.href}>
-                      <Link
-                        href={page.href}
-                        className="rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-                      >
-                        {page.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                Карта Майстра
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="w-64 p-2">
-                <ul className="flex flex-col">
-                  <li className="mb-1 border-b px-3 py-2">
-                    <Link
-                      href="/master-card"
-                      className="text-sm font-semibold text-muted-foreground"
-                    >
-                      Програма лояльності
-                    </Link>
-                  </li>
-                  {masterCardPages.map((page) => (
-                    <li key={page.href}>
-                      <Link
-                        href={page.href}
-                        className="rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-                      >
-                        {page.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+
+            {groups.map((group) => (
+              <NavigationMenuItem key={group.id}>
+                <NavigationMenuTrigger>{group.trigger}</NavigationMenuTrigger>
+                <NavigationMenuContent className="w-64 p-2">
+                  <NavList group={group} />
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            ))}
+
             {routes.map((route) => (
               <NavigationMenuItem key={route.href}>
                 <Link href={route.href} legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                  >
                     {route.label}
                   </NavigationMenuLink>
                 </Link>
@@ -162,7 +149,9 @@ export function MainNav() {
 
       <div className="flex md:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger className={buttonVariants({ variant: "ghost", size: "icon" })}>
+          <SheetTrigger
+            className={buttonVariants({ variant: "ghost", size: "icon" })}
+          >
             <Menu className="h-6 w-6" />
             <span className="sr-only">Відкрити меню</span>
           </SheetTrigger>
@@ -173,127 +162,60 @@ export function MainNav() {
               <Link
                 href="/"
                 onClick={closeMobileMenu}
-                className="block rounded-md px-4 py-2 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="flex w-full items-center rounded-md px-4 py-2 text-lg font-medium transition-colors hover:bg-muted hover:text-foreground"
               >
                 Головна
               </Link>
-              <div>
-                <button
-                  type="button"
-                  onClick={() => setIsCatalogOpen((open) => !open)}
-                  className="flex w-full items-center justify-between rounded-md px-4 py-2 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-                >
-                  Каталог продукції
-                  <ChevronDown
-                    className={`h-5 w-5 transition-transform ${isCatalogOpen ? "rotate-180" : ""}`}
-                    aria-hidden="true"
-                  />
-                </button>
-                {isCatalogOpen && (
-                  <ul className="mt-1 ml-3 flex flex-col gap-1 border-l pl-3">
-                    <li>
-                      <Link
-                        href="/catalog"
-                        onClick={closeMobileMenu}
-                        className="block rounded-md px-4 py-2 text-base font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                      >
-                        Всі категорії
-                      </Link>
-                    </li>
-                    {catalogCategories.map((category) => (
-                      <li key={category.href}>
+
+              {groups.map((group) => (
+                <div key={group.id}>
+                  <button
+                    type="button"
+                    onClick={() => toggleGroup(group.id)}
+                    aria-expanded={openGroup === group.id}
+                    className="flex w-full items-center justify-between rounded-md px-4 py-2 text-lg font-medium transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    {group.trigger}
+                    <ChevronDown
+                      className={`h-5 w-5 transition-transform ${
+                        openGroup === group.id ? "rotate-180" : ""
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </button>
+                  {openGroup === group.id && (
+                    <ul className="ml-3 mt-1 flex flex-col gap-1 border-l pl-3">
+                      <li>
                         <Link
-                          href={category.href}
+                          href={group.header.href}
                           onClick={closeMobileMenu}
-                          className="block rounded-md px-4 py-2 text-base transition-colors hover:bg-accent hover:text-accent-foreground"
+                          className="block rounded-md px-4 py-2 text-base font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                         >
-                          {category.label}
+                          {group.header.label}
                         </Link>
                       </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-              <div>
-                <button
-                  type="button"
-                  onClick={() => setIsNetworkOpen((open) => !open)}
-                  className="flex w-full items-center justify-between rounded-md px-4 py-2 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-                >
-                  Наша мережа
-                  <ChevronDown
-                    className={`h-5 w-5 transition-transform ${isNetworkOpen ? "rotate-180" : ""}`}
-                    aria-hidden="true"
-                  />
-                </button>
-                {isNetworkOpen && (
-                  <ul className="mt-1 ml-3 flex flex-col gap-1 border-l pl-3">
-                    <li>
-                      <Link
-                        href="/network"
-                        onClick={closeMobileMenu}
-                        className="block rounded-md px-4 py-2 text-base font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                      >
-                        Знайти магазин
-                      </Link>
-                    </li>
-                    {networkPages.map((page) => (
-                      <li key={page.href}>
-                        <Link
-                          href={page.href}
-                          onClick={closeMobileMenu}
-                          className="block rounded-md px-4 py-2 text-base transition-colors hover:bg-accent hover:text-accent-foreground"
-                        >
-                          {page.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-              <div>
-                <button
-                  type="button"
-                  onClick={() => setIsMasterCardOpen((open) => !open)}
-                  className="flex w-full items-center justify-between rounded-md px-4 py-2 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-                >
-                  Карта Майстра
-                  <ChevronDown
-                    className={`h-5 w-5 transition-transform ${isMasterCardOpen ? "rotate-180" : ""}`}
-                    aria-hidden="true"
-                  />
-                </button>
-                {isMasterCardOpen && (
-                  <ul className="mt-1 ml-3 flex flex-col gap-1 border-l pl-3">
-                    <li>
-                      <Link
-                        href="/master-card"
-                        onClick={closeMobileMenu}
-                        className="block rounded-md px-4 py-2 text-base font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                      >
-                        Програма лояльності
-                      </Link>
-                    </li>
-                    {masterCardPages.map((page) => (
-                      <li key={page.href}>
-                        <Link
-                          href={page.href}
-                          onClick={closeMobileMenu}
-                          className="block rounded-md px-4 py-2 text-base transition-colors hover:bg-accent hover:text-accent-foreground"
-                        >
-                          {page.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+                      {group.items.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            onClick={closeMobileMenu}
+                            className="block rounded-md px-4 py-2 text-base transition-colors hover:bg-muted hover:text-foreground"
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+
               {routes.map((route) => (
                 <Link
                   key={route.href}
                   href={route.href}
                   onClick={closeMobileMenu}
-                  className="block rounded-md px-4 py-2 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                  className="flex w-full items-center rounded-md px-4 py-2 text-lg font-medium transition-colors hover:bg-muted hover:text-foreground"
                 >
                   {route.label}
                 </Link>
@@ -302,7 +224,6 @@ export function MainNav() {
           </SheetContent>
         </Sheet>
       </div>
-
     </div>
   )
 }
