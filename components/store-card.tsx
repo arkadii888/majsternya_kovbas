@@ -42,13 +42,18 @@ export default function StoreCard({
       </CardContent>
 
       <CardFooter className="flex-col items-stretch gap-2">
-        <Button render={<a href={store.map} target="_blank" rel="noopener noreferrer" />}>
+        <Button
+          variant="secondary"
+          style={{ color: "#ffffff" }}
+          render={<a href={store.map} target="_blank" rel="noopener noreferrer" />}
+        >
           <Navigation className="size-4" />
           Прокласти маршрут
         </Button>
         {store.link && (
           <Button
             variant="secondary"
+            style={{ color: "#ffffff" }}
             render={<a href={store.link} target="_blank" rel="noopener noreferrer" />}
           >
             Детальніше

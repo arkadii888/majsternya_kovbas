@@ -129,15 +129,25 @@
   }
 }
 
-.leaflet-popup-content-wrapper.store-card-popup {
+/* Leaflet applies the popup className to the `.leaflet-popup` container,
+   so we scope all overrides from there. */
+.store-card-popup .leaflet-popup-content-wrapper {
   padding: 0;
+  border: none;
   border-radius: 0.75rem;
   box-shadow: none;
-  border: none;
+  background: transparent;
+  color: inherit;
 }
 
-.leaflet-popup-content.store-card-popup {
+.store-card-popup .leaflet-popup-content {
   margin: 0;
   width: 260px !important;
   background: transparent;
+  color: inherit;
+}
+
+.store-card-popup .leaflet-popup-tip-container,
+.store-card-popup .leaflet-popup-tip {
+  display: none;
 }
