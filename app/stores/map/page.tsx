@@ -1,4 +1,5 @@
 import { networkPages } from "@/lib/network-pages";
+import StoresMap from "@/components/stores-map-client";
 
 const page = networkPages.find((p) => p.href === "/stores/map")!;
 
@@ -16,12 +17,7 @@ export default function KartaPage() {
           Знайдіть найближчий магазин «Майстерня Ковбас» на карті.
         </p>
       </div>
-      <div className="grid gap-6">
-        <p className="max-w-3xl leading-relaxed text-foreground/90">
-          На інтерактивній карті зручно знайти найближчий до вас магазин мережі,
-          побачити адреси та графік роботи, а також прокласти маршрут.
-        </p>
-      </div>
+      <StoresMap />
     </div>
   );
 }
