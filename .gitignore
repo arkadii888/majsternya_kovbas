@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# generated store coordinates
+/config/stores.coords.json
+
 # production
 /build
 

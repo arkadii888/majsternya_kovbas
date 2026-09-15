@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const storesPath = path.join(root, "config/stores.json");
+const coordsPath = path.join(root, "config/stores.coords.json");
 
 const USER_AGENT =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36";
@@ -38,35 +39,45 @@ async function resolveUrl(url, maxHops = 8) {
 }
 
 async function resolveStore(store) {
-  if (typeof store.map !== "string" || !store.map.trim()) return 0;
+  if (typeof store.map !== "string" || !store.map.trim()) return null;
   const map = store.map.trim();
   let host;
   try {
     host = new URL(map).host;
   } catch {
-    return 0;
+    return null;
   }
-  if (host !== "maps.app.goo.gl") return 0;
+  if (host !== "maps.app.goo.gl") return null;
 
   const finalUrl = await resolveUrl(map);
   const coords = coordsFromUrl(finalUrl);
   if (!coords) {
     console.warn(`  ! could not extract coordinates from resolved URL: ${finalUrl}`);
-    return 0;
+    return null;
   }
   const [lat, lng] = coords;
-  if (store.lat === lat && store.lng === lng) return 0;
-  store.lat = lat;
-  store.lng = lng;
   console.log(`  ${store.id} -> ${lat}, ${lng}`);
-  return 1;
+  return { lat, lng };
 }
 
 const data = JSON.parse(await fs.readFile(storesPath, "utf8"));
-let resolvedCount = 0;
+
+const resolved = {};
 for (const store of data.stores ?? []) {
-  resolvedCount += await resolveStore(store);
+  let point = null;
+  try {
+    point = await resolveStore(store);
+  } catch (err) {
+    console.warn(`  ! failed to resolve ${store.id} (${err instanceof Error ? err.message : err})`);
+  }
+  if (point) resolved[store.id] = point;
 }
-const json = JSON.stringify(data, null, 2) + "\n";
-await fs.writeFile(storesPath, json, "utf8");
-console.log(resolvedCount === 0 ? "stores links up to date" : `resolved ${resolvedCount} store link(s)`);
+
+const existing = JSON.parse(await fs.readFile(coordsPath, "utf8").catch(() => "{}"));
+const merged = { ...existing, ...resolved };
+for (const id of Object.keys(merged)) {
+  if (!(data.stores ?? []).some((store) => store.id === id)) delete merged[id];
+}
+
+await fs.writeFile(coordsPath, JSON.stringify(merged, null, 2) + "\n", "utf8");
+console.log(`${Object.keys(merged).length} store coordinate(s) in stores.coords.json`);

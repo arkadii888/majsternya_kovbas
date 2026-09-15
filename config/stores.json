@@ -11,12 +11,10 @@
       "id": "dnipro-1",
       "name": "Майстерня Ковбас",
       "city": "Дніпро",
-      "address": "вул. НаДіи Алексєєнко, 80",
-      "phone": "+38 056 234 56 78",
+      "address": "вул. Надії Алексєєнко, 80",
       "hours": "Пн–Нд 09:00–21:00",
       "map": "https://maps.app.goo.gl/F9TD2gGaqTEfjjD3A",
-      "lat": 48.4549617,
-      "lng": 35.0081641
+      "link": "https://maysternyakovbas.com"
     }
   ]
 }

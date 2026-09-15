@@ -128,3 +128,16 @@
     @apply font-sans;
   }
 }
+
+.leaflet-popup-content-wrapper.store-card-popup {
+  padding: 0;
+  border-radius: 0.75rem;
+  box-shadow: none;
+  border: none;
+}
+
+.leaflet-popup-content.store-card-popup {
+  margin: 0;
+  width: 260px !important;
+  background: transparent;
+}
