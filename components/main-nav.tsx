@@ -62,13 +62,14 @@ function NavList({ group }: { group: MenuGroup }) {
     <ul className="flex flex-col gap-1">
       {group.items.map((item) => (
         <li key={item.href}>
-          <NavigationMenuLink
-            href={item.href}
-            closeOnClick
-            className="cursor-pointer rounded-lg px-3 py-2 text-sm transition-colors hover:bg-muted hover:text-foreground"
-          >
-            {item.label}
-          </NavigationMenuLink>
+          <Link href={item.href} legacyBehavior passHref>
+            <NavigationMenuLink
+              closeOnClick
+              className="cursor-pointer rounded-lg px-3 py-2 text-sm transition-colors hover:bg-muted hover:text-foreground"
+            >
+              {item.label}
+            </NavigationMenuLink>
+          </Link>
         </li>
       ))}
     </ul>
