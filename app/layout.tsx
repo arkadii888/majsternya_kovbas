@@ -23,8 +23,8 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen bg-background antialiased`}>
         <div className="relative flex min-h-screen flex-col">
 
-          <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container mx-auto flex h-16 md:h-22 items-center">
+          <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/40 backdrop-blur-xl">
+            <div className="container mx-auto flex h-16 md:h-20 items-center">
               <MainNav />
             </div>
           </header>
