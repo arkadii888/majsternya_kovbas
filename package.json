@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/resolve-stores-links.mjs && next build",
+    "build": "node scripts/generate-store-links.mjs && node scripts/resolve-stores-links.mjs && next build",
     "start": "next start",
     "lint": "eslint",
+    "stores:links": "node scripts/generate-store-links.mjs",
     "stores:resolve": "node scripts/resolve-stores-links.mjs"
   },
   "dependencies": {

@@ -31,39 +31,43 @@
   "features": [
     {
       "id": "fresh_meat",
-      "label": "Свіже м’ясо"
-    },
-    {
-      "id": "fresh_smoking",
-      "label": "Свіже Копчення"
+      "label": "Свіже м’ясо",
+      "emoji": "🥩"
     },
     {
       "id": "grill_chicken",
-      "label": "Кури-гриль"
+      "label": "Курка-гриль",
+      "emoji": "🔥"
     },
     {
       "id": "shashlyk",
-      "label": "Шашлик"
+      "label": "Шашлик",
+      "emoji": "🍢"
+    },
+    {
+      "id": "fresh_smoking",
+      "label": "Свіже копчення",
+      "emoji": "♨️"
     },
     {
       "id": "bakery",
-      "label": "Випічка"
+      "label": "Випічка",
+      "emoji": "🥐"
     },
     {
       "id": "coffee",
-      "label": "Кава"
-    },
-    {
-      "id": "tableware",
-      "label": "Посуд"
+      "label": "Кава",
+      "emoji": "☕"
     },
     {
       "id": "sauces",
-      "label": "Соуси"
+      "label": "Соуси",
+      "emoji": "🍶"
     },
     {
-      "id": "promotion",
-      "label": "Акційна продукція"
+      "id": "tableware",
+      "label": "Посуд",
+      "emoji": "🍽"
     }
   ],
   "stores": [
@@ -72,9 +76,10 @@
       "name": "Майстерня Ковбас",
       "city": "Дніпро",
       "address": "вул. Надії Алексєєнко, 80",
+      "phone": "+38 (056) 701-01-01",
       "hours": "Пн–Нд 09:00–21:00",
       "map": "https://maps.app.goo.gl/F9TD2gGaqTEfjjD3A",
-      "link": "https://maysternyakovbas.com",
+      "link": "/stores/dnipro-1",
       "features": [
         "fresh_meat",
         "fresh_smoking",
@@ -89,7 +94,7 @@
       "address": "вул. Надії Алексєєнко, 80",
       "hours": "Пн–Нд 09:00–21:00",
       "map": "https://maps.app.goo.gl/F9TD2gGaqTEfjjD3A",
-      "link": "https://maysternyakovbas.com",
+      "link": "/stores/dnipro-2",
       "features": [
         "fresh_meat",
         "fresh_smoking",
@@ -105,7 +110,7 @@
       "address": "вул. Надії Алексєєнко, 80",
       "hours": "Пн–Нд 09:00–21:00",
       "map": "https://maps.app.goo.gl/F9TD2gGaqTEfjjD3A",
-      "link": "https://maysternyakovbas.com",
+      "link": "/stores/dnipro-3",
       "features": [
         "fresh_meat",
         "fresh_smoking",

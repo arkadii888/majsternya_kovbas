@@ -1,6 +1,7 @@
 "use client";
 
 import { Clock, MapPin, Navigation } from "lucide-react";
+import Link from "next/link";
 
 import { features } from "@/config/stores";
 import { Badge } from "@/components/ui/badge";
@@ -65,15 +66,13 @@ export default function StoreCard({
           <Navigation className="size-4" />
           Прокласти маршрут
         </Button>
-        {store.link && (
-          <Button
-            variant="secondary"
-            style={{ color: "#ffffff" }}
-            render={<a href={store.link} target="_blank" rel="noopener noreferrer" />}
-          >
-            Детальніше
-          </Button>
-        )}
+        <Button
+          variant="secondary"
+          style={{ color: "#ffffff" }}
+          render={<Link href={`/stores/${store.id}`} />}
+        >
+          Детальніше
+        </Button>
       </CardFooter>
     </Card>
   );

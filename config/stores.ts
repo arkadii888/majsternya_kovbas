@@ -9,6 +9,7 @@ export type CityOption = {
 export type FeatureOption = {
   id: string;
   label: string;
+  emoji?: string;
 };
 
 export type Store = {
@@ -21,6 +22,7 @@ export type Store = {
   map: string;
   link?: string;
   features: string[];
+  photos?: string[];
   lat: number;
   lng: number;
 };
@@ -45,6 +47,7 @@ export const cities: CityOption[] = data.cities.map((city) => ({
 export const features: FeatureOption[] = data.features.map((feature) => ({
   id: feature.id,
   label: feature.label,
+  emoji: feature.emoji,
 }));
 
 export const stores: Store[] = data.stores.flatMap((store) => {
@@ -52,3 +55,9 @@ export const stores: Store[] = data.stores.flatMap((store) => {
   if (!point) return [];
   return [{ ...store, lat: point.lat, lng: point.lng }];
 });
+
+export const storeIds: string[] = data.stores.map((store) => store.id);
+
+export function getStoreById(storeId: string): Store | undefined {
+  return stores.find((store) => store.id === storeId);
+}
