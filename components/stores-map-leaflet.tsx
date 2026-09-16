@@ -16,22 +16,24 @@ const pinIcon = L.divIcon({
 
 export default function StoresMap() {
   return (
-    <MapContainer
-      center={ukraineBounds.center}
-      zoom={ukraineBounds.zoom}
-      className="h-[500px] w-full rounded-xl border border-border"
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {stores.map((store) => (
-        <Marker key={store.id} position={[store.lat, store.lng]} icon={pinIcon}>
-          <Popup key={store.id} className="store-card-popup">
-            <StoreCard store={store} />
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+    <div className="relative z-0 isolate">
+      <MapContainer
+        center={ukraineBounds.center}
+        zoom={ukraineBounds.zoom}
+        className="h-[500px] w-full rounded-xl border border-border"
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {stores.map((store) => (
+          <Marker key={store.id} position={[store.lat, store.lng]} icon={pinIcon}>
+            <Popup key={store.id} className="store-card-popup">
+              <StoreCard store={store} />
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+    </div>
   );
 }

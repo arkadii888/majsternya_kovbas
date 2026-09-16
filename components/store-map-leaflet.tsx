@@ -15,17 +15,19 @@ const pinIcon = L.divIcon({
 export default function StoreMap({ store }: { store: Store }) {
   const position: [number, number] = [store.lat, store.lng];
   return (
-    <MapContainer
-      center={position}
-      zoom={16}
-      scrollWheelZoom={false}
-      className="h-[320px] w-full rounded-xl border border-border"
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={position} icon={pinIcon} />
-    </MapContainer>
+    <div className="relative z-0 isolate">
+      <MapContainer
+        center={position}
+        zoom={16}
+        scrollWheelZoom={false}
+        className="h-[320px] w-full rounded-xl border border-border"
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position} icon={pinIcon} />
+      </MapContainer>
+    </div>
   );
 }
