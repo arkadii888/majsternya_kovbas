@@ -59,17 +59,14 @@ export default async function StorePage({ params }: { params: Promise<{ storeId:
               </h2>
             </div>
             {storeFeatures.length > 0 ? (
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-base">
                 {storeFeatures.map((feature) => (
-                  <div
-                    key={feature.id}
-                    className="flex items-center gap-3 rounded-xl border bg-card px-4 py-3"
-                  >
-                    <span className="text-2xl" aria-hidden>
+                  <span key={feature.id} className="inline-flex items-center gap-1.5">
+                    <span className="text-xl" aria-hidden>
                       {feature.emoji}
                     </span>
-                    <span className="font-medium">{feature.label}</span>
-                  </div>
+                    <span>{feature.label}</span>
+                  </span>
                 ))}
               </div>
             ) : (
