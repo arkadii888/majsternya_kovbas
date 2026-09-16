@@ -6,6 +6,66 @@
     ],
     "zoom": 6
   },
+  "cities": [
+    {
+      "id": "dnipro",
+      "label": "Дніпро"
+    },
+    {
+      "id": "pavlohrad",
+      "label": "Павлоград"
+    },
+    {
+      "id": "kamianske",
+      "label": "Кам’янське"
+    },
+    {
+      "id": "znamenivka",
+      "label": "Знаменівка"
+    },
+    {
+      "id": "other",
+      "label": "Інші"
+    }
+  ],
+  "features": [
+    {
+      "id": "fresh_meat",
+      "label": "Свіже м’ясо"
+    },
+    {
+      "id": "fresh_smoking",
+      "label": "Свіже Копчення"
+    },
+    {
+      "id": "grill_chicken",
+      "label": "Кури-гриль"
+    },
+    {
+      "id": "shashlyk",
+      "label": "Шашлик"
+    },
+    {
+      "id": "bakery",
+      "label": "Випічка"
+    },
+    {
+      "id": "coffee",
+      "label": "Кава"
+    },
+    {
+      "id": "tableware",
+      "label": "Посуд"
+    },
+    {
+      "id": "sauces",
+      "label": "Соуси"
+    },
+    {
+      "id": "promotion",
+      "label": "Акційна продукція"
+    }
+  ],
   "stores": [
     {
       "id": "dnipro-1",
@@ -14,7 +74,44 @@
       "address": "вул. Надії Алексєєнко, 80",
       "hours": "Пн–Нд 09:00–21:00",
       "map": "https://maps.app.goo.gl/F9TD2gGaqTEfjjD3A",
-      "link": "https://maysternyakovbas.com"
+      "link": "https://maysternyakovbas.com",
+      "features": [
+        "fresh_meat",
+        "fresh_smoking",
+        "shashlyk",
+        "bakery"
+      ]
+    },
+    {
+      "id": "dnipro-2",
+      "name": "Майстерня Ковбас",
+      "city": "Дніпро",
+      "address": "вул. Надії Алексєєнко, 80",
+      "hours": "Пн–Нд 09:00–21:00",
+      "map": "https://maps.app.goo.gl/F9TD2gGaqTEfjjD3A",
+      "link": "https://maysternyakovbas.com",
+      "features": [
+        "fresh_meat",
+        "fresh_smoking",
+        "shashlyk",
+        "bakery",
+        "coffee"
+      ]
+    },
+    {
+      "id": "dnipro-3",
+      "name": "Майстерня Ковбас",
+      "city": "Дніпро",
+      "address": "вул. Надії Алексєєнко, 80",
+      "hours": "Пн–Нд 09:00–21:00",
+      "map": "https://maps.app.goo.gl/F9TD2gGaqTEfjjD3A",
+      "link": "https://maysternyakovbas.com",
+      "features": [
+        "fresh_meat",
+        "fresh_smoking",
+        "shashlyk",
+        "bakery"
+      ]
     }
   ]
 }

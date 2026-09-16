@@ -1,3 +1,9 @@
+# UI components
+
+- Prefer shadcn (in `components/ui`, `@base-ui/react` primitives) for any UI widget. Add new ones with `npx shadcn@4 add <name>` instead of hand-rolling primitives (button, checkbox, radio-group, badge, sheet, card, tooltip, etc.).
+- Match existing spacing, rounding, and token conventions (`cn`, `bg-card`, `text-muted-foreground`, `gap-*`) used by the current shadcn components.
+- Verify component prop/API usage by reading the generated file in `components/ui/` before using a new one.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know

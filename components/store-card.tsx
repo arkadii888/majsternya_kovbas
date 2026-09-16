@@ -2,6 +2,8 @@
 
 import { Clock, MapPin, Navigation } from "lucide-react";
 
+import { features } from "@/config/stores";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -39,6 +41,19 @@ export default function StoreCard({
             </li>
           )}
         </ul>
+        {store.features.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {store.features.map((id) => {
+              const label = features.find((f) => f.id === id)?.label;
+              if (!label) return null;
+              return (
+                <Badge key={id} variant="secondary" className="h-auto py-1">
+                  {label}
+                </Badge>
+              );
+            })}
+          </div>
+        )}
       </CardContent>
 
       <CardFooter className="flex-col items-stretch gap-2">
