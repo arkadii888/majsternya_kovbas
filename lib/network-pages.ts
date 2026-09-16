@@ -15,9 +15,4 @@ export const networkPages: NetworkPage[] = [
     label: "Список магазинів",
     description: "Актуальний перелік магазинів «Майстерня Ковбас» з адресами та графіком.",
   },
-  {
-    href: "/stores/cities",
-    label: "Міста",
-    description: "Міста, де представлена наша мережа.",
-  },
 ];
