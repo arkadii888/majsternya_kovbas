@@ -82,7 +82,9 @@ export default async function ProductPage({ params }: { params: Promise<{ produc
         {crumbs.subcategoryHref && (
           <>
             <span aria-hidden>/</span>
-            <span>{crumbs.subcategoryLabel ?? product.subcategory}</span>
+            <Link href={crumbs.subcategoryHref} className="transition-colors hover:text-foreground">
+              {crumbs.subcategoryLabel ?? product.subcategory}
+            </Link>
           </>
         )}
       </nav>
