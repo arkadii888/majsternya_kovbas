@@ -16,15 +16,15 @@ export default function ProductCard({ item }: { item: Product }) {
       href={`/products/${item.id}`}
       className="group block h-full outline-none"
     >
-      <Card className="relative flex h-full flex-col bg-muted/10 transition-all hover:border-primary group-focus-visible:border-primary pt-0">
+      <Card className="relative flex h-full flex-col transition-all hover:border-primary group-focus-visible:border-primary pt-0">
         <div className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10" />
 
         <div className="relative z-10 flex aspect-[16/9] w-full items-center justify-center border-b bg-muted">
           <ImageOff className="size-8 text-muted-foreground" aria-hidden />
           {item.badges && item.badges.length > 0 && (
             <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
-              {item.badges.slice(0, 2).map((badge) => (
-                <Badge key={badge} variant="secondary" className="bg-background/80 backdrop-blur">
+              {item.badges.map((badge) => (
+                <Badge key={badge} variant="secondary" className="h-auto bg-black py-1 text-white">
                   {badge}
                 </Badge>
               ))}

@@ -38,7 +38,7 @@ function SubcategoryTile({
     >
       <Card
         className={cn(
-          "relative flex h-full min-h-[240px] flex-col bg-muted/10 transition-all group-focus-visible:border-primary",
+          "relative flex h-full min-h-[240px] flex-col transition-all group-focus-visible:border-primary",
           isActive ? "border-primary bg-primary/10" : "hover:border-primary"
         )}
       >
