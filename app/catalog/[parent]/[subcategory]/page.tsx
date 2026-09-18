@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import {
   catalogSubcategories,
   getSubcategoryByHref,
 } from "@/lib/catalog-subcategories";
 import { catalogCategories } from "@/lib/catalog-categories";
+import { getProductsBySubcategory, products } from "@/config/products";
+import { Badge } from "@/components/ui/badge";
 
 export function generateStaticParams() {
   return catalogSubcategories.map((s) => ({
@@ -27,13 +29,19 @@ export async function generateMetadata({ params }: { params: Promise<{ parent: s
   };
 }
 
-export default async function SubcategoryPage({ params }: { params: Promise<{ parent: string; subcategory: string }> }) {
+export default async function SubcategoryPage({
+  params,
+}: {
+  params: Promise<{ parent: string; subcategory: string }>;
+}) {
   const { parent, subcategory } = await params;
   const subcategoryHref = `/catalog/${parent}/${subcategory}`;
   const sub = getSubcategoryByHref(subcategoryHref);
   if (!sub) notFound();
 
   const parentCategory = catalogCategories.find((c) => c.href === sub.parentHref);
+  const parentSlug = parentCategory?.href.replace("/catalog/", "");
+  const items = getProductsBySubcategory(parentSlug, subcategory);
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
@@ -52,11 +60,57 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ pa
           )}
         </div>
       </div>
-      <div className="grid gap-6">
-        <p className="text-sm text-muted-foreground">
-          Асортимент цього розділу оновлюється. Зателефонуйте нам — підкажемо, що є сьогодні.
-        </p>
-      </div>
+
+      {items.length === 0 ? (
+        <div className="grid gap-6">
+          <p className="text-sm text-muted-foreground">
+            Асортимент цього розділу оновлюється. Зателефонуйте нам — підкажемо, що є сьогодні.
+          </p>
+        </div>
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item) => (
+            <ProductCard key={item.id} item={item} />
+          ))}
+        </div>
+      )}
     </div>
+  );
+}
+
+function ProductCard({
+  item,
+}: {
+  item: (typeof products)[number];
+}) {
+  return (
+    <Link
+      href={`/products/${item.id}`}
+      className="group flex flex-col gap-3 rounded-xl border bg-card p-5 transition-colors hover:border-foreground/30 hover:bg-accent/50"
+    >
+      {item.badges && item.badges.length > 0 && (
+        <div className="flex flex-wrap items-center gap-2">
+          {item.badges.slice(0, 2).map((badge) => (
+            <Badge key={badge} variant="secondary">
+              {badge}
+            </Badge>
+          ))}
+        </div>
+      )}
+      <h3 className="font-semibold group-hover:underline">{item.name}</h3>
+      {item.description && (
+        <p className="text-sm text-muted-foreground line-clamp-2">
+          {item.description}
+        </p>
+      )}
+      <span
+        className={
+          "mt-auto inline-flex items-center gap-1 text-sm font-medium transition-transform group-hover:translate-x-0.5"
+        }
+      >
+        Детальніше
+        <ChevronRight className="size-4" />
+      </span>
+    </Link>
   );
 }
