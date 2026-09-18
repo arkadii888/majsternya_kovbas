@@ -1,6 +1,60 @@
 import data from "./products.json";
 import { getStoreById, type Store } from "./stores";
 
+export type ProductFilterOption = {
+  id: string;
+  label: string;
+};
+
+export type ProductFilterGroup = {
+  key: "meatType" | "productType" | "tags";
+  label: string;
+  options: ProductFilterOption[];
+  multi: boolean;
+};
+
+export const productFilterGroups: ProductFilterGroup[] = [
+  {
+    key: "meatType",
+    label: "Вид м'яса",
+    multi: false,
+    options: [
+      { id: "pork", label: "Свинина" },
+      { id: "beef", label: "Яловичина" },
+      { id: "chicken", label: "Курка" },
+      { id: "turkey", label: "Індичка" },
+      { id: "combined", label: "Комбінований склад" },
+    ],
+  },
+  {
+    key: "productType",
+    label: "Тип",
+    multi: false,
+    options: [
+      { id: "cooked", label: "Варений" },
+      { id: "smoked", label: "Копчений" },
+      { id: "raw", label: "Сирий" },
+      { id: "marinated", label: "Маринований" },
+      { id: "ready-to-eat", label: "Готовий до споживання" },
+      { id: "grill", label: "Для грилю" },
+    ],
+  },
+  {
+    key: "tags",
+    label: "Мітки",
+    multi: true,
+    options: [
+      { id: "new", label: "Новинка" },
+      { id: "hit", label: "Хіт" },
+      { id: "own-production", label: "Власне виробництво" },
+      { id: "fresh-smoking", label: "Свіже копчення" },
+      { id: "grill", label: "Для грилю" },
+      { id: "ready-to-eat", label: "Готово до споживання" },
+      { id: "seasonal", label: "Сезонна пропозиція" },
+    ],
+  },
+];
+
 export type ProductNutrition = {
   per?: string;
   calories?: string;
@@ -16,6 +70,9 @@ export type Product = {
   subcategory?: string;
   description?: string;
   photos?: string[];
+  meatType?: string;
+  productType?: string;
+  tags?: string[];
   badges?: string[];
   ingredients?: string[];
   nutrition?: ProductNutrition;

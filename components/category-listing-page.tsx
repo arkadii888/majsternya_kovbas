@@ -2,10 +2,14 @@ import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 
 import { catalogCategories } from "@/lib/catalog-categories";
+import { getProductsBySubcategory } from "@/config/products";
 import { SubcategorySection } from "@/components/catalog-subcategory-section";
+import { ProductsListingClient } from "@/components/products-listing-client";
 
 export function CategoryListingPage({ href }: { href: string }) {
   const category = catalogCategories.find((c) => c.href === href)!;
+  const parentSlug = category.href.replace("/catalog/", "");
+  const items = getProductsBySubcategory(parentSlug);
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
@@ -27,6 +31,20 @@ export function CategoryListingPage({ href }: { href: string }) {
         </div>
       </div>
       <SubcategorySection parentId={href} />
+
+      <div className="mt-12">
+        <h2 className="text-2xl font-bold tracking-tight">Товари</h2>
+        <div className="mt-6">
+          <ProductsListingClient
+            products={items}
+            emptyText={
+              items.length === 0
+                ? "Асортимент цього розділу оновлюється. Зателефонуйте нам — підкажемо, що є сьогодні."
+                : undefined
+            }
+          />
+        </div>
+      </div>
     </div>
   );
 }

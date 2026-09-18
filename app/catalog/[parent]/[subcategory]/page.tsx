@@ -8,7 +8,7 @@ import {
 } from "@/lib/catalog-subcategories";
 import { catalogCategories } from "@/lib/catalog-categories";
 import { getProductsBySubcategory } from "@/config/products";
-import ProductCard from "@/components/product-card";
+import { ProductsListingClient } from "@/components/products-listing-client";
 
 export function generateStaticParams() {
   return catalogSubcategories.map((s) => ({
@@ -61,19 +61,14 @@ export default async function SubcategoryPage({
         </div>
       </div>
 
-      {items.length === 0 ? (
-        <div className="grid gap-6">
-          <p className="text-sm text-muted-foreground">
-            Асортимент цього розділу оновлюється. Зателефонуйте нам — підкажемо, що є сьогодні.
-          </p>
-        </div>
-      ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item) => (
-            <ProductCard key={item.id} item={item} />
-          ))}
-        </div>
-      )}
+      <ProductsListingClient
+        products={items}
+        emptyText={
+          items.length === 0
+            ? "Асортимент цього розділу оновлюється. Зателефонуйте нам — підкажемо, що є сьогодні."
+            : undefined
+        }
+      />
     </div>
   );
 }

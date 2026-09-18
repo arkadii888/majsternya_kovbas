@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { catalogCategories } from "@/lib/catalog-categories";
+import { products } from "@/config/products";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ProductsListingClient } from "@/components/products-listing-client";
 
 export default function CatalogPage() {
   return (
@@ -25,6 +27,13 @@ export default function CatalogPage() {
             </Card>
           </Link>
         ))}
+      </div>
+
+      <div className="mt-12">
+        <h2 className="text-2xl font-bold tracking-tight">Товари</h2>
+        <div className="mt-6">
+          <ProductsListingClient products={products} />
+        </div>
       </div>
     </div>
   );

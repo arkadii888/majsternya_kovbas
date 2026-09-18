@@ -7,7 +7,10 @@
       "subcategory": "cooked-sausages",
       "description": "М'яка варена ковбаса зі свіжого делікатесного фаршу. Нежна структура, збалансований смак — ідеальна для сніданку та бутербродів.",
       "photos": [],
-      "badges": ["Раз", "Два"],
+      "meatType": "pork",
+      "productType": "cooked",
+      "tags": ["own-production", "ready-to-eat"],
+      "badges": ["Власне виробництво", "Готово до споживання"],
       "ingredients": [
         "Свинина делікатесна",
         "Вода",
