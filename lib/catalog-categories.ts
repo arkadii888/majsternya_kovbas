@@ -6,37 +6,37 @@ export type CatalogCategory = {
 
 export const catalogCategories: CatalogCategory[] = [
   {
-    href: "/catalog/sausages",
+    href: "/catalog/sausages-delicacies",
     label: "Ковбаси та делікатеси",
     description: "Класичні та варені ковбаси, а також делікатесні вироби власного виробництва.",
   },
   {
-    href: "/catalog/franks",
+    href: "/catalog/frankfurters",
     label: "Сосиски та сардельки",
     description: "Сосиски та сардельки різних видів — від щоденних до святкових.",
   },
   {
-    href: "/catalog/meat-and-poultry",
+    href: "/catalog/meat-poultry",
     label: "М’ясо та птиця",
     description: "Свіже м’ясо та птиця від надійних постачальників.",
   },
   {
-    href: "/catalog/grilling",
-    label: "Для грилю",
+    href: "/catalog/grill-meat",
+    label: "М’ясо для грилю",
     description: "Вироби, ідеальні для грилю та відкритого вогню.",
   },
   {
-    href: "/catalog/smoked",
+    href: "/catalog/smoked-meat",
     label: "Копченості",
     description: "Копчені делікатеси з незабутнім димним ароматом.",
   },
   {
-    href: "/catalog/ready-meals",
+    href: "/catalog/ready-eat-meals",
     label: "Готові страви",
     description: "Готові страви, які економить ваш час на кухні.",
   },
   {
-    href: "/catalog/baked-goods",
+    href: "/catalog/bakery-pastries",
     label: "Випічка",
     description: "Ароматна випічка, що виходить з духовки щодня.",
   },
@@ -51,7 +51,7 @@ export const catalogCategories: CatalogCategory[] = [
     description: "Соуси та приправи, що розкривають смак страви.",
   },
   {
-    href: "/catalog/gift-sets",
+    href: "/catalog/sets-bundles",
     label: "Набори",
     description: "Готові набори до святкового столу.",
   },

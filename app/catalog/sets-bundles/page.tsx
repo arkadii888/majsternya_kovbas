@@ -1,6 +1,7 @@
 import { catalogCategories } from "@/lib/catalog-categories";
+import { SubcategorySection } from "@/components/catalog-subcategory-section";
 
-const category = catalogCategories.find((c) => c.href === "/catalog/gift-sets")!;
+const category = catalogCategories.find((c) => c.href === "/catalog/sets-bundles")!;
 
 export const metadata = {
   title: `${category.label} | Майстерня Ковбас`,
@@ -14,8 +15,7 @@ export default function NaboryPage() {
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Набори</h1>
         <p className="text-muted-foreground text-lg">Готові набори до святкового столу.</p>
       </div>
-      <div className="grid gap-6">
-      </div>
+      <SubcategorySection parentId="/catalog/sets-bundles" />
     </div>
   );
 }
