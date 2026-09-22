@@ -45,6 +45,9 @@ export default function ProductCard({ item }: { item: Product }) {
           <CardTitle className="text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
             {item.name}
           </CardTitle>
+          {item.description && (
+            <p className="line-clamp-2 text-sm text-muted-foreground">{item.description}</p>
+          )}
           <span className="mt-auto inline-flex items-center gap-1 pt-1 text-sm font-medium transition-colors group-hover:text-primary">
             Детальніше
             <ChevronRight className="size-4" />
