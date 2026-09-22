@@ -45,6 +45,7 @@ export const productFilterGroups: ProductFilterGroup[] = [
     multi: true,
     options: [
       { id: "new", label: "Новинка" },
+      { id: "discount", label: "Знижка" },
       { id: "hit", label: "Хіт" },
       { id: "own-production", label: "Власне виробництво" },
       { id: "fresh-smoking", label: "Свіже копчення" },

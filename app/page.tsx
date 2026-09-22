@@ -21,7 +21,7 @@ const bottomLinks = [
   { href: "/stores", title: "Наша мережа", desc: "Знайдіть найближчий магазин", Icon: Store },
   { href: "/loyalty", title: "Карта Майстра", desc: "Програма лояльності", Icon: CreditCard },
   { href: "/production", title: "Про виробництво", desc: "Як ми створюємо продукт", Icon: Factory },
-  { href: "/news", title: "Акції та новини", desc: "Останні події та знижки", Icon: Megaphone },
+  { href: "/sale", title: "Знижки та новинки", desc: "Товари зі знижками та новинки", Icon: Megaphone },
   { href: "/contacts", title: "Контакти", desc: "Зв'яжіться з нами", Icon: Phone },
 ];
 

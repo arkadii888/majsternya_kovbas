@@ -8,6 +8,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type { Product } from "@/config/products";
+import { cn } from "@/lib/utils";
+
+const BADGE_CLASSES: Record<string, string> = {
+  Новинка: "bg-emerald-600 text-white",
+  Знижка: "bg-red-600 text-white",
+};
 
 export default function ProductCard({ item }: { item: Product }) {
   return (
@@ -20,10 +26,14 @@ export default function ProductCard({ item }: { item: Product }) {
 
         <div className="relative z-10 flex aspect-[16/9] w-full items-center justify-center border-b bg-muted">
           <ImageOff className="size-8 text-muted-foreground" aria-hidden />
-          {item.badges && item.badges.length > 0 && (
+          {(item.badges ?? []).length > 0 && (
             <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
-              {item.badges.map((badge) => (
-                <Badge key={badge} variant="secondary" className="h-auto bg-black py-1 text-white">
+              {(item.badges ?? []).map((badge) => (
+                <Badge
+                  key={badge}
+                  variant="secondary"
+                  className={cn("h-auto py-1 text-white", BADGE_CLASSES[badge] ?? "bg-black")}
+                >
                   {badge}
                 </Badge>
               ))}

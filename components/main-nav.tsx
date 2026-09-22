@@ -53,7 +53,7 @@ const groups: MenuGroup[] = [
 
 const routes = [
   { href: "/production", label: "Про виробництво" },
-  { href: "/news", label: "Акції та новини" },
+  { href: "/sale", label: "Знижки та новинки" },
   { href: "/contacts", label: "Контакти" },
 ]
 

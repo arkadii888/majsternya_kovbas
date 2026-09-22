@@ -22,13 +22,15 @@ const ALL: string = "all";
 export function ProductsListingClient({
   products: items,
   emptyText,
+  initialTags = [],
 }: {
   products: Product[];
   emptyText?: string;
+  initialTags?: string[];
 }) {
   const [meatType, setMeatType] = useState<string>(ALL);
   const [productType, setProductType] = useState<string>(ALL);
-  const [tags, setTags] = useState<string[]>([]);
+  const [tags, setTags] = useState<string[]>(initialTags);
 
   const toggleTag = (id: string, checked: boolean) => {
     setTags((current) =>
@@ -40,16 +42,21 @@ export function ProductsListingClient({
     );
   };
 
+  const activeTags = tags.filter((id) => !initialTags.includes(id));
+
   const visible = useMemo(() => {
     return items.filter((product) => {
       if (meatType !== ALL && product.meatType !== meatType) return false;
       if (productType !== ALL && product.productType !== productType) return false;
-      if (tags.length > 0 && !tags.every((id) => product.tags?.includes(id))) {
+      if (initialTags.length > 0 && !initialTags.some((id) => product.tags?.includes(id))) {
+        return false;
+      }
+      if (activeTags.length > 0 && !activeTags.every((id) => product.tags?.includes(id))) {
         return false;
       }
       return true;
     });
-  }, [items, meatType, productType, tags]);
+  }, [items, meatType, productType, tags, activeTags, initialTags]);
 
   const activeTagOptions = productFilterGroups
     .find((group) => group.key === "tags")
@@ -64,26 +71,31 @@ export function ProductsListingClient({
               <section key={group.key} className="flex flex-col gap-3">
                 <h3 className="text-sm font-medium">{group.label}</h3>
                 <div className="flex flex-col gap-1">
-                  {group.options.map((option) => {
-                    const checked = tags.includes(option.id);
-                    return (
-                      <label
-                        key={option.id}
-                        className={cn(
-                          "flex cursor-pointer items-center gap-2.5 rounded-lg px-1 py-1.5 text-sm transition-colors hover:bg-muted",
-                          checked && "font-medium",
-                        )}
-                      >
-                        <Checkbox
-                          checked={checked}
-                          onCheckedChange={(value) =>
-                            toggleTag(option.id, value === true)
-                          }
-                        />
-                        <span>{option.label}</span>
-                      </label>
-                    );
-                  })}
+                    {group.options.map((option) => {
+                      const checked = tags.includes(option.id);
+                      const locked = initialTags.includes(option.id);
+                      return (
+                        <label
+                          key={option.id}
+                          className={cn(
+                            "flex items-center gap-2.5 rounded-lg px-1 py-1.5 text-sm transition-colors",
+                            locked
+                              ? "cursor-default opacity-60"
+                              : "cursor-pointer hover:bg-muted",
+                            checked && "font-medium",
+                          )}
+                        >
+                          <Checkbox
+                            checked={checked}
+                            disabled={locked}
+                            onCheckedChange={(value) =>
+                              toggleTag(option.id, value === true)
+                            }
+                          />
+                          <span>{option.label}</span>
+                        </label>
+                      );
+                    })}
                 </div>
               </section>
             ) : (

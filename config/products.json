@@ -9,8 +9,8 @@
       "photos": [],
       "meatType": "pork",
       "productType": "cooked",
-      "tags": ["own-production", "ready-to-eat"],
-      "badges": ["Власне виробництво", "Готово до споживання"],
+      "tags": ["own-production", "ready-to-eat", "discount", "new"],
+      "badges": ["Власне виробництво", "Готово до споживання", "Знижка", "Новинка"],
       "ingredients": [
         "Свинина делікатесна",
         "Вода",
