@@ -19,6 +19,10 @@ export default function MasterCardPage() {
           <Link key={page.href} href={page.href} className="group block h-full outline-none">
             <Card className="relative flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary">
               <div className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10" />
+              <page.Icon
+                aria-hidden
+                className="absolute bottom-4 right-4 z-20 h-8 w-8 text-muted-foreground/70 transition-colors group-hover:text-primary"
+              />
               <CardHeader className="relative z-20 flex flex-col gap-1 p-5">
                 <CardTitle className="text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary sm:text-2xl">
                   {page.label}

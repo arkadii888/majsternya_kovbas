@@ -8,13 +8,21 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Aurora from "@/components/aurora";
+import {
+  Beef,
+  CreditCard,
+  Factory,
+  Megaphone,
+  Phone,
+  Store,
+} from "lucide-react";
 
 const bottomLinks = [
-  { href: "/stores", title: "Наша мережа", desc: "Знайдіть найближчий магазин" },
-  { href: "/loyalty", title: "Карта Майстра", desc: "Програма лояльності" },
-  { href: "/production", title: "Про виробництво", desc: "Як ми створюємо продукт" },
-  { href: "/news", title: "Акції та новини", desc: "Останні події та знижки" },
-  { href: "/contacts", title: "Контакти", desc: "Зв'яжіться з нами" },
+  { href: "/stores", title: "Наша мережа", desc: "Знайдіть найближчий магазин", Icon: Store },
+  { href: "/loyalty", title: "Карта Майстра", desc: "Програма лояльності", Icon: CreditCard },
+  { href: "/production", title: "Про виробництво", desc: "Як ми створюємо продукт", Icon: Factory },
+  { href: "/news", title: "Акції та новини", desc: "Останні події та знижки", Icon: Megaphone },
+  { href: "/contacts", title: "Контакти", desc: "Зв'яжіться з нами", Icon: Phone },
 ];
 
 export default function Home() {
@@ -66,6 +74,11 @@ export default function Home() {
             <div className="absolute inset-0 z-0 flex items-center justify-center text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
             </div>
 
+            <Beef
+              aria-hidden
+              className="absolute bottom-4 right-4 z-20 h-8 w-8 text-muted-foreground/70 transition-colors group-hover:text-primary"
+            />
+
             <CardHeader className="relative z-20 flex flex-col gap-1 p-5">
               <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
                 Каталог продукції
@@ -85,6 +98,11 @@ export default function Home() {
 
               <div className="absolute inset-0 z-0 flex items-center justify-center text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
               </div>
+
+              <link.Icon
+                aria-hidden
+                className="absolute bottom-4 right-4 z-20 h-8 w-8 text-muted-foreground/70 transition-colors group-hover:text-primary"
+              />
 
 <CardHeader className="relative z-20 flex flex-col gap-1 p-5">
                 <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
