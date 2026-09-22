@@ -11,9 +11,6 @@ const inter = Inter({ subsets: ["latin", "cyrillic"] });
 export const metadata: Metadata = {
   title: "Майстерня Ковбас",
   description: "Мережа магазинів",
-  icons: {
-    icon: "/icon.png",
-  },
 };
 
 export default function RootLayout({
