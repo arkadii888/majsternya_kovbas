@@ -52,7 +52,7 @@ const groups: MenuGroup[] = [
 ]
 
 const routes = [
-  { href: "/production", label: "Про виробництво" },
+  { href: "https://www.premier.dp.ua/", label: "Про виробництво", external: true },
   { href: "/sale", label: "Знижки та новинки" },
   { href: "/contacts", label: "Контакти" },
 ]
@@ -122,13 +122,24 @@ export function MainNav() {
 
             {routes.map((route) => (
               <NavigationMenuItem key={route.href}>
-                <Link href={route.href} legacyBehavior passHref>
-                  <NavigationMenuLink
+                {route.external ? (
+                  <a
+                    href={route.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={navigationMenuTriggerStyle()}
                   >
                     {route.label}
-                  </NavigationMenuLink>
-                </Link>
+                  </a>
+                ) : (
+                  <Link href={route.href} legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {route.label}
+                    </NavigationMenuLink>
+                  </Link>
+                )}
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
@@ -190,14 +201,16 @@ export function MainNav() {
               ))}
 
               {routes.map((route) => (
-                <Link
+                <a
                   key={route.href}
                   href={route.href}
-                  onClick={closeMobileMenu}
+                  onClick={route.external ? undefined : closeMobileMenu}
+                  target={route.external ? "_blank" : undefined}
+                  rel={route.external ? "noopener noreferrer" : undefined}
                   className="flex w-full items-center rounded-md px-4 py-2 text-lg font-medium transition-colors hover:bg-muted hover:text-foreground"
                 >
                   {route.label}
-                </Link>
+                </a>
               ))}
             </nav>
           </SheetContent>

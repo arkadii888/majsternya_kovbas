@@ -18,10 +18,12 @@ import {
   Store,
 } from "lucide-react";
 
+const PRODUCTION_URL = "https://www.premier.dp.ua/";
+
 const bottomLinks = [
   { href: "/stores", title: "Наша мережа", desc: "Знайдіть найближчий магазин", Icon: Store },
   { href: "/loyalty", title: "Карта Майстра", desc: "Програма лояльності", Icon: CreditCard },
-  { href: "/production", title: "Про виробництво", desc: "Як ми створюємо продукт", Icon: Factory },
+  { href: PRODUCTION_URL, title: "Про виробництво", desc: "Як ми створюємо продукт", Icon: Factory },
   { href: "/sale", title: "Знижки та новинки", desc: "Товари зі знижками та новинки", Icon: Megaphone },
   { href: "/contacts", title: "Контакти", desc: "Зв'яжіться з нами", Icon: Phone },
 ];
@@ -103,7 +105,13 @@ export default function Home() {
 
       <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
         {bottomLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="group block h-full outline-none">
+          <a
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block h-full outline-none"
+          >
             <Card className="relative overflow-hidden flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary">
 
               <div className="absolute inset-0 z-0 flex items-center justify-center text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
@@ -123,7 +131,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
-          </Link>
+          </a>
         ))}
       </div>
       </div>
