@@ -25,9 +25,6 @@ export function CategoryListingPage({ href }: { href: string }) {
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
             {category.label}
           </h1>
-          <p className="text-muted-foreground text-lg">
-            {category.description}
-          </p>
         </div>
       </div>
       <SubcategorySection parentId={href} />

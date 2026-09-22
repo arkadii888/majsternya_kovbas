@@ -55,9 +55,6 @@ export default async function SubcategoryPage({
         </Link>
         <div className="flex flex-col gap-2">
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{sub.label}</h1>
-          {sub.description && (
-            <p className="text-muted-foreground text-lg">{sub.description}</p>
-          )}
         </div>
       </div>
 

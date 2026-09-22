@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardTitle,
 } from "@/components/ui/card";
 import type { Product } from "@/config/products";
@@ -36,11 +35,6 @@ export default function ProductCard({ item }: { item: Product }) {
           <CardTitle className="text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
             {item.name}
           </CardTitle>
-          {item.description && (
-            <CardDescription className="line-clamp-2 text-sm text-gray-400">
-              {item.description}
-            </CardDescription>
-          )}
           <span className="mt-auto inline-flex items-center gap-1 pt-1 text-sm font-medium transition-colors group-hover:text-primary">
             Детальніше
             <ChevronRight className="size-4" />

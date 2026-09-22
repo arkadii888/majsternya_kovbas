@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { catalogSubcategories, type CatalogSubcategory } from "@/lib/catalog-subcategories";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 export function SubcategorySection({ parentId }: { parentId: string }) {
@@ -52,11 +52,6 @@ function SubcategoryTile({
           >
             {item.label}
           </CardTitle>
-          {item.description && (
-            <CardDescription className="text-sm text-gray-400 sm:text-base">
-              {item.description}
-            </CardDescription>
-          )}
         </CardHeader>
       </Card>
     </Link>

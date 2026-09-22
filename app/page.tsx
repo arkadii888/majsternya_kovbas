@@ -81,7 +81,7 @@ export default function Home() {
 
             <CardHeader className="relative z-20 flex flex-col gap-1 p-5">
               <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
-                Каталог продукції
+                 Каталог продукції
               </CardTitle>
               <CardDescription className="text-sm sm:text-base text-gray-400">
                 Переглянути весь асортимент
@@ -106,7 +106,7 @@ export default function Home() {
 
 <CardHeader className="relative z-20 flex flex-col gap-1 p-5">
                 <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
-                  {link.title}
+                   {link.title}
                 </CardTitle>
                 <CardDescription className="text-sm sm:text-base text-gray-400">
                   {link.desc}

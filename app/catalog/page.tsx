@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { catalogCategories } from "@/lib/catalog-categories";
 import { products } from "@/config/products";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProductsListingClient } from "@/components/products-listing-client";
 
 export default function CatalogPage() {
@@ -9,7 +9,6 @@ export default function CatalogPage() {
     <div className="container mx-auto px-4 py-8 md:py-12">
       <div className="mb-8 flex flex-col gap-2">
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Каталог продукції</h1>
-        <p className="text-muted-foreground text-lg">Ознайомтеся з нашим асортиментом.</p>
       </div>
       <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 auto-rows-fr lg:grid-cols-5">
         {catalogCategories.map((category) => (
@@ -20,9 +19,6 @@ export default function CatalogPage() {
                 <CardTitle className="text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary sm:text-2xl">
                   {category.label}
                 </CardTitle>
-                <CardDescription className="text-sm text-gray-400 sm:text-base">
-                  {category.description}
-                </CardDescription>
               </CardHeader>
             </Card>
           </Link>
