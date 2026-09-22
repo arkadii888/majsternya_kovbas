@@ -127,7 +127,6 @@
   html {
     @apply font-sans scroll-smooth;
     scroll-padding-top: 4.5rem;
-    scrollbar-gutter: stable;
   }
   @media (min-width: 768px) {
     html {

@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Aurora from "@/components/aurora";
 
 const bottomLinks = [
   { href: "/stores", title: "Наша мережа", desc: "Знайдіть найближчий магазин" },
@@ -18,12 +19,19 @@ const bottomLinks = [
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-12 md:py-20">
+    <div className="relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[80vh] max-h-[900px]">
+        <Aurora
+          colorStops={["#f2a51e", "#f2a51e", "#f2a51e"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={1}
+        />
+      </div>
 
-      <div className="relative mb-16 flex flex-col items-center justify-center overflow-hidden">
-        <div className="relative w-full flex items-center justify-center">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,165,0,0.15)_0%,transparent_70%)] pointer-events-none" />
-
+      <div className="relative z-10 container mx-auto px-4 py-12 md:py-20">
+        <div className="mb-16 flex flex-col items-center justify-center">
+          <div className="relative w-full flex items-center justify-center">
            <Image
              src={majsterImg}
              alt="Майстер"
@@ -37,7 +45,7 @@ export default function Home() {
            <div className="absolute inset-0 flex flex-col items-start justify-start p-8 md:p-16 lg:p-24 pointer-events-none">
              <h1 className="text-3xl font-black uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl max-w-[70%] md:max-w-[50%] drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] md:mt-0 -mt-2">
                <span className="block text-foreground">Від майстрів</span>
-               <span className="block text-primary">м'ясної справи!</span >
+               <span className="block text-primary">м&rsquo;ясної справи!</span >
              </h1>
            </div>
         </div>
@@ -88,6 +96,7 @@ export default function Home() {
             </Card>
           </Link>
         ))}
+      </div>
       </div>
     </div>
   );
