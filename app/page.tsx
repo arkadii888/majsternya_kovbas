@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Aurora from "@/components/aurora";
+import { popularCategories } from "@/config/popular-categories";
 import {
   Beef,
   CreditCard,
@@ -62,10 +63,19 @@ export default function Home() {
 
       <div className="mb-8 grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
 
-        {[1, 2, 3, 4].map((item) => (
-          <Card key={item} className="relative overflow-hidden flex h-full min-h-[240px] flex-col border-dashed opacity-50 justify-center items-center bg-transparent">
-            <span className="text-muted-foreground text-sm"></span>
-          </Card>
+        {popularCategories.map((category) => (
+          <Link key={category.href} href={category.href} className="group block h-full outline-none">
+            <Card className="relative overflow-hidden flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary">
+              <div className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
+              </div>
+
+              <CardHeader className="relative z-20 flex flex-col gap-1 p-5">
+                <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
+                  {category.label}
+                </CardTitle>
+              </CardHeader>
+            </Card>
+          </Link>
         ))}
 
         <Link href="/catalog" className="group block h-full outline-none">
