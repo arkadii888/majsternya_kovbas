@@ -104,7 +104,8 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-5 auto-rows-fr">
-        {bottomLinks.map((link) => (
+        {bottomLinks.map((link) =>
+          link.href.startsWith("http") ? (
           <a
             key={link.href}
             href={link.href}
@@ -132,7 +133,34 @@ export default function Home() {
               </CardHeader>
             </Card>
           </a>
-        ))}
+          ) : (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="group block h-full outline-none"
+          >
+            <Card className="relative overflow-hidden flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary">
+
+              <div className="absolute inset-0 z-0 flex items-center justify-center text-sm text-muted-foreground transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10">
+              </div>
+
+              <link.Icon
+                aria-hidden
+                className="absolute bottom-4 right-4 z-20 h-8 w-8 text-muted-foreground/70 transition-colors group-hover:text-primary"
+              />
+
+              <CardHeader className="relative z-20 flex flex-col gap-1 p-5">
+                <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
+                   {link.title}
+                </CardTitle>
+                <CardDescription className="text-sm sm:text-base text-gray-400">
+                  {link.desc}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+          )
+        )}
       </div>
       </div>
     </div>
