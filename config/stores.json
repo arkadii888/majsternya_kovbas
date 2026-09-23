@@ -1,10 +1,10 @@
 {
   "bounds": {
     "center": [
-      48.5,
-      31.5
+      48.2,
+      34.8
     ],
-    "zoom": 6
+    "zoom": 7
   },
   "cities": [
     {
@@ -16,12 +16,64 @@
       "label": "Павлоград"
     },
     {
-      "id": "kamianske",
-      "label": "Кам’янське"
+      "id": "sinnelikove",
+      "label": "Синельникове"
     },
     {
-      "id": "znamenivka",
-      "label": "Знаменівка"
+      "id": "ptykhovky",
+      "label": "Пятихатки"
+    },
+    {
+      "id": "samar",
+      "label": "Самар"
+    },
+    {
+      "id": "znamenovka",
+      "label": "Знаменовка"
+    },
+    {
+      "id": "verky",
+      "label": "Вербки"
+    },
+    {
+      "id": "ternyovka",
+      "label": "Терновка"
+    },
+    {
+      "id": "petrykovka",
+      "label": "Петріковка"
+    },
+    {
+      "id": "pokrov",
+      "label": "Покров"
+    },
+    {
+      "id": "pidhorodnyove",
+      "label": "Підгороднє"
+    },
+    {
+      "id": "sofyivka",
+      "label": "Софіївка"
+    },
+    {
+      "id": "krynchky",
+      "label": "Кринички"
+    },
+    {
+      "id": "zelenodolzk",
+      "label": "Зеленодольск"
+    },
+    {
+      "id": "zhovti-vody",
+      "label": "Жовті води"
+    },
+    {
+      "id": "nikopor",
+      "label": "Нікополь"
+    },
+    {
+      "id": "volnovorsk",
+      "label": "Вольногорск"
     },
     {
       "id": "other",
@@ -31,7 +83,7 @@
   "features": [
     {
       "id": "fresh_meat",
-      "label": "Свіже м’ясо",
+      "label": "Свіже м'ясо",
       "emoji": "🥩"
     },
     {
@@ -72,51 +124,239 @@
   ],
   "stores": [
     {
-      "id": "dnipro-1",
+      "id": "sinnelikove-1",
       "name": "Майстерня Ковбас",
-      "city": "Дніпро",
-      "address": "вул. Надії Алексєєнко, 80",
-      "phone": "+38 (056) 701-01-01",
-      "hours": "Пн–Нд 09:00–21:00",
-      "map": "https://maps.app.goo.gl/F9TD2gGaqTEfjjD3A",
-      "link": "/stores/dnipro-1",
+      "city": "Синельникове",
+      "address": "вул. Садова, 1б",
+      "hours": "7:00 - 19:30",
+      "map": "https://www.google.com/maps?q=48.31686205068129,35.52594959291241",
       "features": [
         "fresh_meat",
         "fresh_smoking",
         "shashlyk",
         "bakery"
-      ]
+        ],
+      "link": "/stores/sinnelikove-1"
+    },
+    {
+      "id": "ptykhovky-1",
+      "name": "Майстерня Ковбас",
+      "city": "Пятихатки",
+      "address": "вул. Козацька, буд. 41/б",
+      "hours": "7:30 - 19:30",
+      "map": "https://www.google.com/maps?q=48.40403545159266,33.709110280369266",
+      "features": [],
+      "link": "/stores/ptykhovky-1"
+    },
+    {
+      "id": "pavlohrad-1",
+      "name": "Майстерня Ковбас",
+      "city": "Павлоград",
+      "address": "вул. Західнодонбаська, 5а",
+      "hours": "8:00 - 20:00",
+      "map": "https://www.google.com/maps?q=48.50241240961718,35.92748731157162",
+      "features": [],
+      "link": "/stores/pavlohrad-1"
+    },
+    {
+      "id": "samar-1",
+      "name": "Майстерня Ковбас",
+      "city": "Самар",
+      "address": "Кулебівка, вул.Квiтуча, 1",
+      "hours": "8:00 - 20:00",
+      "map": "https://www.google.com/maps?q=48.63513955710593,35.199773097747695",
+      "features": [],
+      "link": "/stores/samar-1"
+    },
+    {
+      "id": "dnipro-1",
+      "name": "Майстерня Ковбас",
+      "city": "Дніпро",
+      "address": "Ігренський ринок, вул. Північнодонецька, 1А",
+      "hours": "8:00 - 20:00",
+      "map": "https://www.google.com/maps?q=48.47621844264668,35.19370660677365",
+      "features": [],
+      "link": "/stores/dnipro-1"
+    },
+    {
+      "id": "znamenovka-1",
+      "name": "Майстерня Ковбас",
+      "city": "Знаменовка",
+      "address": "пр. Кооперативный",
+      "hours": "7:30 - 19:00",
+      "map": "https://www.google.com/maps?q=48.62747285573801,35.44835839819461",
+      "features": [],
+      "link": "/stores/znamenovka-1"
+    },
+    {
+      "id": "verky-1",
+      "name": "Майстерня Ковбас",
+      "city": "Вербки",
+      "address": "вул. Харьківська, 36а",
+      "hours": "7:30 - 18:30",
+      "map": "https://www.google.com/maps?q=48.58635262358486,35.89855213287145",
+      "features": [],
+      "link": "/stores/verky-1"
+    },
+    {
+      "id": "ternyovka-1",
+      "name": "Майстерня Ковбас",
+      "city": "Терновка",
+      "address": "Верхній ринок, вул.Пушкіна, 4",
+      "hours": "7:30 - 19:30",
+      "map": "https://www.google.com/maps?q=48.52653002601,36.07118626998933",
+      "features": [],
+      "link": "/stores/ternyovka-1"
+    },
+    {
+      "id": "petrykovka-1",
+      "name": "Майстерня Ковбас",
+      "city": "Петріковка",
+      "address": "вул. Калнишевського 65",
+      "hours": "8:00 - 19:00",
+      "map": "https://www.google.com/maps?q=48.71563664973363,34.619920729360786",
+      "features": [],
+      "link": "/stores/petrykovka-1"
     },
     {
       "id": "dnipro-2",
       "name": "Майстерня Ковбас",
       "city": "Дніпро",
-      "address": "вул. Надії Алексєєнко, 80",
-      "hours": "Пн–Нд 09:00–21:00",
-      "map": "https://maps.app.goo.gl/F9TD2gGaqTEfjjD3A",
-      "link": "/stores/dnipro-2",
-      "features": [
-        "fresh_meat",
-        "fresh_smoking",
-        "shashlyk",
-        "bakery",
-        "coffee"
-      ]
+      "address": "провулк Парусный, 7",
+      "hours": "8:00 - 20:00",
+      "map": "https://www.google.com/maps?q=48.47943902837144,34.9069973605216",
+      "features": [],
+      "link": "/stores/dnipro-2"
+    },
+    {
+      "id": "pokrov-1",
+      "name": "Майстерня Ковбас",
+      "city": "Покров",
+      "address": "вул. Лізи Чайкіної, 29",
+      "hours": "8:00 - 20:00",
+      "map": "https://www.google.com/maps?q=47.65176845449213,34.12719318112083",
+      "features": [],
+      "link": "/stores/pokrov-1"
+    },
+    {
+      "id": "pokrov-2",
+      "name": "Майстерня Ковбас",
+      "city": "Покров",
+      "address": "вул. Героїв України, 4",
+      "hours": "8:00 - 20:00",
+      "map": "https://www.google.com/maps?q=47.65653702226364,34.11513966513592",
+      "features": [],
+      "link": "/stores/pokrov-2"
     },
     {
       "id": "dnipro-3",
       "name": "Майстерня Ковбас",
       "city": "Дніпро",
-      "address": "вул. Надії Алексєєнко, 80",
-      "hours": "Пн–Нд 09:00–21:00",
-      "map": "https://maps.app.goo.gl/F9TD2gGaqTEfjjD3A",
-      "link": "/stores/dnipro-3",
-      "features": [
-        "fresh_meat",
-        "fresh_smoking",
-        "shashlyk",
-        "bakery"
-      ]
+      "address": "вул. Петра Яцика 3",
+      "hours": "7:00 - 19:00",
+      "map": "https://www.google.com/maps?q=48.52126083631143,35.08582786417403",
+      "features": [],
+      "link": "/stores/dnipro-3"
+    },
+    {
+      "id": "pidhorodnyove-1",
+      "name": "Майстерня Ковбас",
+      "city": "Підгороднє",
+      "address": "вул.Шосейна, 43",
+      "hours": "8:00 - 20:00",
+      "map": "https://www.google.com/maps?q=48.57124929399923,35.10238622908221",
+      "features": [],
+      "link": "/stores/pidhorodnyove-1"
+    },
+    {
+      "id": "sofyivka-1",
+      "name": "Майстерня Ковбас",
+      "city": "Софіївка",
+      "address": "вул. Незалежності, 62",
+      "hours": "8:00 - 19:30",
+      "map": "https://www.google.com/maps?q=48.04430032770498,33.86635588638734",
+      "features": [],
+      "link": "/stores/sofyivka-1"
+    },
+    {
+      "id": "krynchky-1",
+      "name": "Майстерня Ковбас",
+      "city": "Кринички",
+      "address": "вул. Центральна, 1А",
+      "hours": "8:00 - 19:00",
+      "map": "https://www.google.com/maps?q=48.367353435294675,34.45904341846603",
+      "features": [],
+      "link": "/stores/krynchky-1"
+    },
+    {
+      "id": "pavlohrad-2",
+      "name": "Майстерня Ковбас",
+      "city": "Павлоград",
+      "address": "вул. Миру біля буд.90",
+      "hours": "8:00 - 20:00",
+      "map": "https://www.google.com/maps?q=48.53704633234114,35.86772122556166",
+      "features": [],
+      "link": "/stores/pavlohrad-2"
+    },
+    {
+      "id": "pavlohrad-3",
+      "name": "Майстерня Ковбас",
+      "city": "Павлоград",
+      "address": "вул Центральна біля буд.92",
+      "hours": "8:00 - 20:00",
+      "map": "https://www.google.com/maps?q=48.53047653022306,35.8717074409434",
+      "features": [],
+      "link": "/stores/pavlohrad-3"
+    },
+    {
+      "id": "zelenodolzk-1",
+      "name": "Майстерня Ковбас",
+      "city": "Зеленодольск",
+      "address": "вул Незалежності, буд, 16/А",
+      "hours": "8:00 - 19:30",
+      "map": "https://www.google.com/maps?q=47.567282804334525,33.64886879324215",
+      "features": [],
+      "link": "/stores/zelenodolzk-1"
+    },
+    {
+      "id": "zhovti-vody-1",
+      "name": "Майстерня Ковбас",
+      "city": "Жовті води",
+      "address": "вул. Кропоткино 14/1",
+      "hours": "8:00 - 19:30",
+      "map": "https://www.google.com/maps?q=48.34310118934049,33.484802296867535",
+      "features": [],
+      "link": "/stores/zhovti-vody-1"
+    },
+    {
+      "id": "nikopor-1",
+      "name": "Майстерня Ковбас",
+      "city": "Нікополь",
+      "address": "вул. Добролюбова, 23/1",
+      "hours": "7:00 - 19:00",
+      "map": "https://www.google.com/maps?q=47.58188902120404,34.313732772637884",
+      "features": [],
+      "link": "/stores/nikopor-1"
+    },
+    {
+      "id": "dnipro-4",
+      "name": "Майстерня Ковбас",
+      "city": "Дніпро",
+      "address": "вул. Надії Алексєєнко, буд.80",
+      "hours": "8:00 - 18:00",
+      "map": "https://www.google.com/maps?q=48.45517931365042,35.00847464909533",
+      "features": [],
+      "link": "/stores/dnipro-4"
+    },
+    {
+      "id": "volnovorsk-1",
+      "name": "Майстерня Ковбас",
+      "city": "Вольногорск",
+      "address": "вул. Центральная 50",
+      "hours": "8:00 - 19:30",
+      "map": "https://www.google.com/maps?q=48.47496262711691,34.01005255685755",
+      "features": [],
+      "link": "/stores/volnovorsk-1"
     }
   ]
 }
