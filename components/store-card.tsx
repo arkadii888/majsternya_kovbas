@@ -24,7 +24,7 @@ export default function StoreCard({
   className?: string;
 }) {
   return (
-    <Card size="sm" className={cn("w-full text-left", className)}>
+    <Card size="sm" className={cn("h-full w-full text-left", className)}>
       <CardHeader>
         <CardTitle>{store.city}</CardTitle>
       </CardHeader>
@@ -57,7 +57,7 @@ export default function StoreCard({
         )}
       </CardContent>
 
-      <CardFooter className="flex-col items-stretch gap-2">
+      <CardFooter className="mt-auto flex-col items-stretch gap-2">
         <Button
           variant="secondary"
           style={{ color: "#ffffff" }}
