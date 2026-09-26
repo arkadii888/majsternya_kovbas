@@ -62,6 +62,9 @@ export type ProductNutrition = {
   protein?: string;
   fat?: string;
   carbs?: string;
+  saturatedFat?: string;
+  sugars?: string;
+  salt?: string;
 };
 
 export type Product = {
