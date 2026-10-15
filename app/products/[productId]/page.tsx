@@ -66,7 +66,7 @@ export default async function ProductPage({ params }: { params: Promise<{ produc
       >
         <Link
           href="/catalog"
-          className="inline-flex w-fit items-center gap-1 transition-colors hover:text-foreground"
+          className="-m-2 inline-flex w-fit items-center gap-1 rounded-md p-2 transition-colors hover:text-foreground active:bg-muted sm:m-0 sm:rounded-none sm:p-0"
         >
           <ChevronLeft className="size-4" />
           Каталог
@@ -74,7 +74,10 @@ export default async function ProductPage({ params }: { params: Promise<{ produc
         {crumbs.categoryHref && (
           <>
             <span aria-hidden>/</span>
-            <Link href={crumbs.categoryHref} className="transition-colors hover:text-foreground">
+            <Link
+              href={crumbs.categoryHref}
+              className="-m-2 rounded-md p-2 transition-colors hover:text-foreground active:bg-muted sm:m-0 sm:rounded-none sm:p-0"
+            >
               {crumbs.categoryLabel ?? product.category}
             </Link>
           </>
@@ -82,7 +85,10 @@ export default async function ProductPage({ params }: { params: Promise<{ produc
         {crumbs.subcategoryHref && (
           <>
             <span aria-hidden>/</span>
-            <Link href={crumbs.subcategoryHref} className="transition-colors hover:text-foreground">
+            <Link
+              href={crumbs.subcategoryHref}
+              className="-m-2 rounded-md p-2 transition-colors hover:text-foreground active:bg-muted sm:m-0 sm:rounded-none sm:p-0"
+            >
               {crumbs.subcategoryLabel ?? product.subcategory}
             </Link>
           </>
@@ -201,7 +207,7 @@ export default async function ProductPage({ params }: { params: Promise<{ produc
         </div>
 
         {product.stores.length > 0 ? (
-          <div className="grid gap-6 sm:grid-cols-2 2xl:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 2xl:grid-cols-3">
             {product.stores.map((store) => (
               <StoreCard key={store.id} store={store} />
             ))}
