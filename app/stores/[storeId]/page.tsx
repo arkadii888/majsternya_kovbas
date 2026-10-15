@@ -50,7 +50,9 @@ export default async function StorePage({ params }: { params: Promise<{ storeId:
 
       <div className="grid gap-6 lg:grid-cols-[2fr_1fr] lg:items-start">
         <div className="flex flex-col gap-6">
-          <StorePhotoGallery photos={store.photos} />
+          <StorePhotoGallery
+            photos={store.photos ?? (store.photo ? [store.photo] : undefined)}
+          />
 
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">

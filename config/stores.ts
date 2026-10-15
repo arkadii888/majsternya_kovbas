@@ -22,6 +22,7 @@ export type Store = {
   map: string;
   link?: string;
   features: string[];
+  photo?: string;
   photos?: string[];
   lat: number;
   lng: number;
