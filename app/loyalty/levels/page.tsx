@@ -42,7 +42,7 @@ export default function RivniPage() {
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Рівні</h1>
       </div>
 
-      <div className="grid gap-6">
+      <div className="grid gap-4 sm:gap-6">
         <p className="max-w-3xl leading-relaxed text-foreground/90">
           Чим вищий статус — тим більше бонусів ви отримуєте за кожен чек! Множник
           бонусів залежить від загальної суми усіх ваших покупок за весь час.

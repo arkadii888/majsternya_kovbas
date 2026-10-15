@@ -13,17 +13,17 @@ export default function MasterCardPage() {
       <div className="mb-8 flex flex-col gap-2">
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Карта Майстра</h1>
       </div>
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 auto-rows-fr lg:grid-cols-5">
+      <div className="grid grid-cols-2 gap-3 auto-rows-fr sm:gap-6 lg:grid-cols-5">
         {masterCardPages.map((page) => (
           <Link key={page.href} href={page.href} className="group block h-full outline-none">
-            <Card className="relative flex h-full min-h-[240px] flex-col transition-all hover:border-primary group-focus-visible:border-primary">
+            <Card className="relative flex h-full min-h-[170px] flex-col transition-all hover:border-primary group-focus-visible:border-primary sm:min-h-[240px]">
               <div className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10" />
               <page.Icon
                 aria-hidden
                 className="absolute bottom-4 right-4 z-20 h-8 w-8 text-muted-foreground/70 transition-colors group-hover:text-primary"
               />
-              <CardHeader className="relative z-20 flex flex-col gap-1 p-5">
-                <CardTitle className="text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary sm:text-2xl">
+              <CardHeader className="relative z-20 flex flex-col gap-1 p-4 sm:p-5">
+                <CardTitle className="text-base font-bold tracking-tight text-foreground transition-colors group-hover:text-primary sm:text-2xl">
                   {page.label}
                 </CardTitle>
               </CardHeader>

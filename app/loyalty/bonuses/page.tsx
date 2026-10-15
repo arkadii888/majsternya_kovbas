@@ -41,8 +41,8 @@ export default function BonusyPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-muted/50 text-left">
-                  <th className="px-4 py-3 font-medium">Сума покупки</th>
-                  <th className="px-4 py-3 font-medium">
+                  <th className="px-3 py-2.5 font-medium sm:px-4 sm:py-3">Сума покупки</th>
+                  <th className="px-3 py-2.5 font-medium sm:px-4 sm:py-3">
                     Базові бонуси (до множника)
                   </th>
                 </tr>
@@ -50,8 +50,8 @@ export default function BonusyPage() {
               <tbody>
                 {earningRows.map((row) => (
                   <tr key={row.amount} className="border-t">
-                    <td className="px-4 py-3">{row.amount}</td>
-                    <td className="px-4 py-3 flex items-center">
+                    <td className="px-3 py-2.5 sm:px-4 sm:py-3">{row.amount}</td>
+                    <td className="flex items-center px-3 py-2.5 sm:px-4 sm:py-3">
                       <Badge variant="secondary" className="mr-2">
                         {row.base}
                       </Badge>

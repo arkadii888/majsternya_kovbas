@@ -34,7 +34,7 @@ export default function ProProgramuPage() {
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Про програму</h1>
       </div>
 
-      <div className="grid gap-6">
+      <div className="grid gap-4 sm:gap-6">
         <div className="max-w-3xl flex flex-col gap-4">
           <p className="leading-relaxed text-foreground/90">
             «Карта Майстра» — це бонусно-накопичувальна система, яка дозволяє
