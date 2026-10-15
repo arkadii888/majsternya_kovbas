@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Geist } from "next/font/google";
 import "./globals.css";
 import { MainNav } from "@/components/main-nav";
+import { SiteFooter } from "@/components/site-footer";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -36,13 +37,7 @@ export default function RootLayout({
             {children}
           </main>
 
-          <footer className="py-6 md:py-0">
-            <div className="container mx-auto flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
-              <p className="text-sm leading-loose text-muted-foreground">
-                © 2026
-              </p>
-            </div>
-          </footer>
+          <SiteFooter />
 
         </div>
       </body>
