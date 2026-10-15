@@ -41,15 +41,15 @@ export default async function StorePage({ params }: { params: Promise<{ storeId:
       <div className="mb-8 flex flex-col gap-3">
         <Link
           href="/stores/list"
-          className="inline-flex w-fit items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          className="-m-2 inline-flex w-fit items-center gap-1 rounded-md p-2 text-sm text-muted-foreground transition-colors hover:text-foreground active:bg-muted sm:m-0 sm:rounded-none sm:p-0"
         >
           <ChevronLeft className="size-4" />
           До списку магазинів
         </Link>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[2fr_1fr] lg:items-start">
-        <div className="flex flex-col gap-6">
+      <div className="grid gap-4 sm:gap-6 lg:grid-cols-[2fr_1fr] lg:items-start">
+        <div className="flex flex-col gap-4 sm:gap-6">
           <StorePhotoGallery
             photos={store.photos ?? (store.photo ? [store.photo] : undefined)}
           />
@@ -119,7 +119,7 @@ export default async function StorePage({ params }: { params: Promise<{ storeId:
             )}
           </dl>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 sm:gap-4">
             <Button
               variant="secondary"
               style={{ color: "#ffffff" }}
