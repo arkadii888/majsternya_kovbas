@@ -14,7 +14,7 @@ export function SubcategorySection({ parentId }: { parentId: string }) {
   if (items.length === 0) return null;
 
   return (
-    <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 auto-rows-fr lg:grid-cols-5">
+    <div className="grid grid-cols-2 gap-3 auto-rows-fr sm:gap-6 lg:grid-cols-5">
       {items.map((item: CatalogSubcategory) => (
         <SubcategoryTile key={item.slug} item={item} pathname={pathname} />
       ))}
@@ -38,15 +38,15 @@ function SubcategoryTile({
     >
       <Card
         className={cn(
-          "relative flex h-full min-h-[240px] flex-col transition-all group-focus-visible:border-primary",
+          "relative flex h-full min-h-[170px] flex-col transition-all group-focus-visible:border-primary sm:min-h-[240px]",
           isActive ? "border-primary bg-primary/10" : "hover:border-primary"
         )}
       >
         <div className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-105 group-hover:bg-primary/10" />
-        <CardHeader className="relative z-20 flex flex-col gap-1 p-5">
+        <CardHeader className="relative z-20 flex flex-col gap-1 p-4 sm:p-5">
           <CardTitle
             className={cn(
-              "text-xl font-bold tracking-tight transition-colors sm:text-2xl",
+              "text-base font-bold tracking-tight transition-colors sm:text-2xl",
               isActive ? "text-primary" : "text-foreground group-hover:text-primary"
             )}
           >

@@ -16,7 +16,7 @@ export function CategoryListingPage({ href }: { href: string }) {
       <div className="mb-8 flex flex-col gap-3">
         <Link
           href="/catalog"
-          className="inline-flex w-fit items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          className="-m-2 inline-flex w-fit items-center gap-1 rounded-md p-2 text-sm text-muted-foreground transition-colors hover:text-foreground active:bg-muted sm:m-0 sm:rounded-none sm:p-0"
         >
           <ChevronLeft className="size-4" />
           До каталогу
